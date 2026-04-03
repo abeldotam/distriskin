@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TESLAMED — Technologie Esthétique Avancée | DISTRISKIN</title>
+<meta name="description" content="TESLAMED : technologies esthétiques avancées pour des soins du visage et du corps innovants. Distribué par Distriskin.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   DISTRISKIN — Global Stylesheet
+   Brand Charter: Navy #10133F · Gold #AD822B · Gray #404040
+   Typography: Montserrat (display) · Cormorant Garamond (serif)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── VARIABLES ── */
+:root {
+  --navy: #10133F;
+  --navy-light: #1a1d5c;
+  --gold: #AD822B;
+  --gold-light: #c9a455;
+  --gold-pale: #e8d5c0;
+  --gold-bg: #f7f0e5;
+  --gray: #404040;
+  --gray-light: #8a8a8a;
+  --gray-border: #e2e0dc;
+  --cream: #faf8f5;
+  --white: #ffffff;
+  --font-display: 'Montserrat', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --max-width: 1240px;
+  --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-display);
+  color: var(--gray);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ── UTILITIES ── */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 4rem; }
+.text-center { text-align: center; }
+
+.section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--gray-light);
+  max-width: 600px;
+}
+
+.gold-line {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.5rem 0;
+}
+.gold-line-center { margin: 1.5rem auto; }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.6s;
+}
+.btn-primary:hover::before { left: 100%; }
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(173, 130, 43, 0.3);
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+.btn-outline-dark {
+  display: inline-block;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.btn-outline-dark:hover { background: var(--navy); color: var(--white); }
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s var(--transition);
+}
+
+nav.nav-dark { /* for pages with light hero backgrounds */ }
+
+nav.scrolled {
+  background: rgba(16, 19, 63, 0.97);
+  padding: 1rem 4rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.15);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.4s var(--transition);
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--gold); }
+.nav-links a.active::after { width: 100%; }
+
+/* Brand sub-links */
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  background: rgba(16, 19, 63, 0.97);
+  backdrop-filter: blur(20px);
+  padding: 1rem 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.3s var(--transition);
+  border-top: 2px solid var(--gold);
+  margin-top: 1rem;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.12em !important;
+  white-space: nowrap;
+}
+.nav-dropdown-menu a::after { display: none !important; }
+.nav-dropdown-menu a:hover { background: rgba(173, 130, 43, 0.1); }
+
+.nav-cta {
+  border: 1px solid var(--gold) !important;
+  padding: 0.55rem 1.6rem !important;
+  color: var(--gold) !important;
+  transition: all 0.3s !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--gold) !important; color: var(--white) !important; }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu-toggle span {
+  width: 24px; height: 1.5px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* Mobile nav */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: var(--navy);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 999;
+  }
+  .nav-links.show a { font-size: 1rem; }
+  .menu-toggle { display: flex; }
+  .nav-dropdown-menu {
+    position: static;
+    opacity: 1; visibility: visible;
+    transform: none;
+    background: transparent;
+    border: none;
+    margin: 0; padding: 0.5rem 0;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   PAGE HERO (reusable across pages)
+   ═══════════════════════════════════════════ */
+.page-hero {
+  min-height: 55vh;
+  background: var(--navy);
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -15%;
+  width: 60vw; height: 60vw;
+  border-radius: 50%;
+  border: 1px solid rgba(173, 130, 43, 0.06);
+}
+.page-hero-content {
+  position: relative; z-index: 2;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+.page-hero .section-label { color: var(--gold); }
+.page-hero .section-title { color: var(--white); font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1rem; }
+.page-hero .section-desc { color: rgba(255,255,255,0.5); }
+
+/* ═══════════════════════════════════════════
+   CTA BANNER (reusable)
+   ═══════════════════════════════════════════ */
+.cta-banner {
+  background: var(--navy);
+  padding: 6rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px;
+  border: 1px solid rgba(173, 130, 43, 0.05);
+  border-radius: 50%;
+}
+.cta-banner .section-title { color: var(--white); max-width: 700px; margin: 0 auto 1rem; }
+.cta-banner .section-desc { color: rgba(255,255,255,0.45); margin: 0 auto 2.5rem; text-align: center; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.4);
+  padding: 0;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding: 5rem 4rem 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.35);
+  max-width: 280px;
+}
+
+.footer-col-title {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.7rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--gold-light); }
+
+.footer-bottom {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.footer-bottom a { color: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   SCROLL ANIMATIONS
+   ═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.8s var(--transition);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.12s; }
+.reveal-d2 { transition-delay: 0.24s; }
+.reveal-d3 { transition-delay: 0.36s; }
+.reveal-d4 { transition-delay: 0.48s; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE GLOBAL
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .container { padding: 0 2rem; }
+  nav { padding: 1.2rem 2rem; }
+  nav.scrolled { padding: 0.8rem 2rem; }
+  .page-hero { padding: 5rem 2rem 3rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; padding: 3rem 2rem 2rem; }
+  .footer-bottom { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+  .page-hero { min-height: 45vh; padding: 5rem 1.5rem 2.5rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+</style>
+<style>
+.brand-hero {
+  min-height: 65vh;
+  background: linear-gradient(135deg, var(--navy) 0%, #0c0e30 60%, #080a24 100%);
+  display: flex; align-items: flex-end;
+  padding: 6rem 4rem 5rem;
+  position: relative; overflow: hidden;
+}
+.brand-hero::before {
+  content: 'T';
+  position: absolute; top: 50%; right: 8%;
+  transform: translateY(-50%);
+  font-family: var(--font-serif); font-size: 30rem; font-weight: 300;
+  color: rgba(173,130,43,0.03);
+}
+.brand-hero-content { max-width: var(--max-width); width: 100%; margin: 0 auto; position: relative; z-index: 2; }
+.brand-hero .brand-cat {
+  font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem; font-weight: 500;
+}
+.brand-hero h1 {
+  font-family: var(--font-serif); font-size: clamp(2.5rem,5.5vw,4.5rem);
+  font-weight: 300; color: var(--white); line-height: 1.15; margin-bottom: 1.5rem;
+}
+.brand-hero h1 em { font-style: italic; color: var(--gold-light); }
+.brand-hero .section-desc { color: rgba(255,255,255,0.5); max-width: 550px; }
+
+.brand-intro {
+  padding: 8rem 4rem; background: var(--cream);
+}
+.brand-intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  max-width: var(--max-width); margin: 0 auto; align-items: center;
+}
+.brand-visual {
+  height: 400px; background: linear-gradient(145deg, #0c0e30, #161850);
+  position: relative; overflow: hidden;
+}
+.brand-visual::after {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%); width: 150px; height: 150px;
+  border: 1px solid rgba(173,130,43,0.15); border-radius: 50%;
+}
+
+.benefits {
+  padding: 8rem 4rem; background: var(--white);
+}
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  max-width: var(--max-width); margin: 4rem auto 0;
+}
+.benefit {
+  padding: 2.5rem; border: 1px solid var(--gray-border); transition: all 0.5s var(--transition);
+}
+.benefit:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(16,19,63,0.06); }
+.benefit-num {
+  font-family: var(--font-serif); font-size: 2rem; font-weight: 300;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.benefit-title {
+  font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 600; color: var(--navy); margin-bottom: 1rem;
+}
+.benefit-text {
+  font-size: 0.85rem; font-weight: 300; line-height: 1.8; color: var(--gray-light);
+}
+
+.use-cases {
+  padding: 8rem 4rem; background: var(--navy); color: var(--white);
+}
+.use-cases .section-title { color: var(--white); }
+.uc-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  max-width: var(--max-width); margin: 4rem auto 0;
+}
+.uc-card {
+  padding: 3rem; border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s;
+}
+.uc-card:hover { background: rgba(255,255,255,0.03); border-color: rgba(173,130,43,0.2); }
+.uc-card-title {
+  font-size: 1rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 1rem;
+}
+.uc-card-text {
+  font-size: 0.88rem; font-weight: 300; line-height: 1.8;
+  color: rgba(255,255,255,0.45);
+}
+
+.other-brands {
+  padding: 5rem 4rem; background: var(--cream); text-align: center;
+}
+.ob-row {
+  display: flex; justify-content: center; gap: 2rem;
+  max-width: 800px; margin: 2rem auto 0;
+}
+.ob-link {
+  padding: 1.5rem 3rem; border: 1px solid var(--gray-border);
+  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 500; color: var(--navy); transition: all 0.3s;
+}
+.ob-link:hover { border-color: var(--gold); color: var(--gold); }
+
+@media (max-width: 1024px) {
+  .brand-intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .brand-visual { height: 280px; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .uc-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .brand-hero { padding: 5rem 1.5rem 3rem; }
+  .brand-intro, .benefits, .use-cases, .other-brands { padding: 5rem 1.5rem; }
+  .ob-row { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">DISTRISKIN</a>
+  <ul class="nav-links">
+    <li><a href="approche.html">Notre Approche</a></li>
+    <li class="nav-dropdown"><a href="#" class="active">Nos Marques ▾</a><div class="nav-dropdown-menu"><a href="teslamed.html" class="active">TESLAMED</a><a href="niance.html">NIANCE</a><a href="joadams.html">JO ADAMS</a></div></li>
+    <li><a href="equipe.html">L'Équipe</a></li>
+    <li><a href="blog.html">Journal</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="menu-toggle" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="brand-hero">
+  <div class="brand-hero-content">
+    <div class="brand-cat">Technologie Esthétique Avancée</div>
+    <h1>TESLAMED<br><em>L'innovation au service du soin</em></h1>
+    <p class="section-desc" style="color:rgba(255,255,255,0.5);">Des dispositifs de pointe pour des soins du visage et du corps innovants, offrant à vos clients des résultats visibles et mesurables dès la première séance.</p>
+  </div>
+</div>
+
+<section class="brand-intro">
+  <div class="brand-intro-grid">
+    <div>
+      <span class="section-label reveal">À propos</span>
+      <h2 class="section-title reveal reveal-d1">La technologie<br>au service de <em>l'excellence</em></h2>
+      <div class="gold-line reveal reveal-d1"></div>
+      <p class="section-desc reveal reveal-d2">TESLAMED développe des technologies esthétiques de dernière génération destinées aux professionnels du soin. Chaque dispositif est conçu pour offrir des performances supérieures tout en garantissant une expérience client exceptionnelle.</p>
+      <p class="section-desc reveal reveal-d2" style="margin-top:1rem;">Les appareils TESLAMED vous permettent de proposer des soins innovants qui se démarquent de l'offre traditionnelle et répondent à la demande croissante de traitements à résultats visibles.</p>
+    </div>
+    <div class="brand-visual reveal reveal-d2"></div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="text-center">
+    <span class="section-label reveal">Avantages</span>
+    <h2 class="section-title reveal reveal-d1">Pourquoi choisir <em>TESLAMED</em></h2>
+    <div class="gold-line gold-line-center reveal reveal-d1"></div>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit reveal">
+      <div class="benefit-num">01</div>
+      <div class="benefit-title">Résultats immédiats</div>
+      <p class="benefit-text">Des résultats visibles et mesurables dès la première séance, renforçant la satisfaction et la fidélisation de vos clients.</p>
+    </div>
+    <div class="benefit reveal reveal-d1">
+      <div class="benefit-num">02</div>
+      <div class="benefit-title">Innovation continue</div>
+      <p class="benefit-text">Des technologies régulièrement mises à jour pour rester à la pointe de l'esthétique avancée et vous positionner comme précurseur.</p>
+    </div>
+    <div class="benefit reveal reveal-d2">
+      <div class="benefit-num">03</div>
+      <div class="benefit-title">Formation complète</div>
+      <p class="benefit-text">Un accompagnement technique et commercial pour que vos équipes maîtrisent chaque protocole et maximisent le retour sur investissement.</p>
+    </div>
+    <div class="benefit reveal">
+      <div class="benefit-num">04</div>
+      <div class="benefit-title">Polyvalence</div>
+      <p class="benefit-text">Des soins visage et corps complets qui vous permettent d'élargir votre carte de prestations et de toucher de nouvelles clientèles.</p>
+    </div>
+    <div class="benefit reveal reveal-d1">
+      <div class="benefit-num">05</div>
+      <div class="benefit-title">Rentabilité</div>
+      <p class="benefit-text">Un investissement rapidement amorti grâce à des soins à forte valeur ajoutée que vos clients sont prêts à renouveler.</p>
+    </div>
+    <div class="benefit reveal reveal-d2">
+      <div class="benefit-num">06</div>
+      <div class="benefit-title">Synergie</div>
+      <p class="benefit-text">Une complémentarité parfaite avec les cosmétiques NIANCE pour des protocoles de soins holistiques ultra-performants.</p>
+    </div>
+  </div>
+</section>
+
+<section class="use-cases">
+  <div class="text-center">
+    <span class="section-label reveal" style="color:var(--gold);">Applications</span>
+    <h2 class="section-title reveal reveal-d1">Pour quels <em>établissements</em></h2>
+    <div class="gold-line gold-line-center reveal reveal-d1"></div>
+  </div>
+  <div class="uc-grid">
+    <div class="uc-card reveal">
+      <div class="uc-card-title">Spas d'Hôtels & Palaces</div>
+      <p class="uc-card-text">Proposez à votre clientèle internationale des soins technologiques exclusifs qui complètent votre carte et positionnent votre spa comme un lieu d'innovation.</p>
+    </div>
+    <div class="uc-card reveal reveal-d1">
+      <div class="uc-card-title">Instituts de Beauté Premium</div>
+      <p class="uc-card-text">Démarquez-vous de la concurrence avec des traitements à résultats visibles qui fidélisent vos clientes et augmentent le panier moyen de vos prestations.</p>
+    </div>
+    <div class="uc-card reveal">
+      <div class="uc-card-title">Centres de Médecine Esthétique</div>
+      <p class="uc-card-text">Complétez votre offre avec des technologies non invasives qui répondent à la demande croissante de traitements esthétiques doux et efficaces.</p>
+    </div>
+    <div class="uc-card reveal reveal-d1">
+      <div class="uc-card-title">Concept Spas & Wellness</div>
+      <p class="uc-card-text">Intégrez l'innovation technologique dans votre concept pour offrir une expérience différenciante et attirer une clientèle en quête de nouveauté.</p>
+    </div>
+  </div>
+</section>
+
+<section class="other-brands">
+  <span class="section-label reveal">Nos Autres Marques</span>
+  <div class="ob-row reveal reveal-d1">
+    <a href="niance.html" class="ob-link">NIANCE — Cosmétique Holistique</a>
+    <a href="joadams.html" class="ob-link">JO ADAMS — Parfumerie de Niche</a>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <span class="section-label reveal" style="color:var(--gold);">Intéressé par TESLAMED ?</span>
+  <h2 class="section-title reveal reveal-d1">Demandez une <em>démonstration</em></h2>
+  <p class="section-desc reveal reveal-d2">Découvrez comment TESLAMED peut transformer votre offre de soins et booster votre chiffre d'affaires.</p>
+  <a href="contact.html" class="btn-primary reveal reveal-d3">Nous contacter</a>
+</section>
+
+<footer>
+  <div class="footer-top"><div><div class="footer-brand">DISTRISKIN</div><p class="footer-tagline">Expert de la distribution premium.</p></div><div><div class="footer-col-title">Navigation</div><div class="footer-links"><a href="approche.html">Notre Approche</a><a href="equipe.html">L'Équipe</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div></div><div><div class="footer-col-title">Nos Marques</div><div class="footer-links"><a href="teslamed.html">TESLAMED</a><a href="niance.html">NIANCE</a><a href="joadams.html">JO ADAMS</a></div></div><div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="tel:+33688405645">+33 6 88 40 56 45</a><a href="mailto:contact@distriskin.com">contact@distriskin.com</a></div></div></div>
+  <div class="footer-bottom"><span>© 2025 DISTRISKIN SARL</span><span><a href="#">Mentions légales</a></span></div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80));
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

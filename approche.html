@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre Approche — DISTRISKIN</title>
+<meta name="description" content="Découvrez l'approche unique de Distriskin : un accompagnement sur mesure axé sur le sell-out et la réussite de nos partenaires.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   DISTRISKIN — Global Stylesheet
+   Brand Charter: Navy #10133F · Gold #AD822B · Gray #404040
+   Typography: Montserrat (display) · Cormorant Garamond (serif)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── VARIABLES ── */
+:root {
+  --navy: #10133F;
+  --navy-light: #1a1d5c;
+  --gold: #AD822B;
+  --gold-light: #c9a455;
+  --gold-pale: #e8d5c0;
+  --gold-bg: #f7f0e5;
+  --gray: #404040;
+  --gray-light: #8a8a8a;
+  --gray-border: #e2e0dc;
+  --cream: #faf8f5;
+  --white: #ffffff;
+  --font-display: 'Montserrat', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --max-width: 1240px;
+  --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-display);
+  color: var(--gray);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ── UTILITIES ── */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 4rem; }
+.text-center { text-align: center; }
+
+.section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--gray-light);
+  max-width: 600px;
+}
+
+.gold-line {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.5rem 0;
+}
+.gold-line-center { margin: 1.5rem auto; }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.6s;
+}
+.btn-primary:hover::before { left: 100%; }
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(173, 130, 43, 0.3);
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+.btn-outline-dark {
+  display: inline-block;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.btn-outline-dark:hover { background: var(--navy); color: var(--white); }
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s var(--transition);
+}
+
+nav.nav-dark { /* for pages with light hero backgrounds */ }
+
+nav.scrolled {
+  background: rgba(16, 19, 63, 0.97);
+  padding: 1rem 4rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.15);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.4s var(--transition);
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--gold); }
+.nav-links a.active::after { width: 100%; }
+
+/* Brand sub-links */
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  background: rgba(16, 19, 63, 0.97);
+  backdrop-filter: blur(20px);
+  padding: 1rem 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.3s var(--transition);
+  border-top: 2px solid var(--gold);
+  margin-top: 1rem;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.12em !important;
+  white-space: nowrap;
+}
+.nav-dropdown-menu a::after { display: none !important; }
+.nav-dropdown-menu a:hover { background: rgba(173, 130, 43, 0.1); }
+
+.nav-cta {
+  border: 1px solid var(--gold) !important;
+  padding: 0.55rem 1.6rem !important;
+  color: var(--gold) !important;
+  transition: all 0.3s !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--gold) !important; color: var(--white) !important; }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu-toggle span {
+  width: 24px; height: 1.5px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* Mobile nav */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: var(--navy);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 999;
+  }
+  .nav-links.show a { font-size: 1rem; }
+  .menu-toggle { display: flex; }
+  .nav-dropdown-menu {
+    position: static;
+    opacity: 1; visibility: visible;
+    transform: none;
+    background: transparent;
+    border: none;
+    margin: 0; padding: 0.5rem 0;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   PAGE HERO (reusable across pages)
+   ═══════════════════════════════════════════ */
+.page-hero {
+  min-height: 55vh;
+  background: var(--navy);
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -15%;
+  width: 60vw; height: 60vw;
+  border-radius: 50%;
+  border: 1px solid rgba(173, 130, 43, 0.06);
+}
+.page-hero-content {
+  position: relative; z-index: 2;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+.page-hero .section-label { color: var(--gold); }
+.page-hero .section-title { color: var(--white); font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1rem; }
+.page-hero .section-desc { color: rgba(255,255,255,0.5); }
+
+/* ═══════════════════════════════════════════
+   CTA BANNER (reusable)
+   ═══════════════════════════════════════════ */
+.cta-banner {
+  background: var(--navy);
+  padding: 6rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px;
+  border: 1px solid rgba(173, 130, 43, 0.05);
+  border-radius: 50%;
+}
+.cta-banner .section-title { color: var(--white); max-width: 700px; margin: 0 auto 1rem; }
+.cta-banner .section-desc { color: rgba(255,255,255,0.45); margin: 0 auto 2.5rem; text-align: center; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.4);
+  padding: 0;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding: 5rem 4rem 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.35);
+  max-width: 280px;
+}
+
+.footer-col-title {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.7rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--gold-light); }
+
+.footer-bottom {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.footer-bottom a { color: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   SCROLL ANIMATIONS
+   ═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.8s var(--transition);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.12s; }
+.reveal-d2 { transition-delay: 0.24s; }
+.reveal-d3 { transition-delay: 0.36s; }
+.reveal-d4 { transition-delay: 0.48s; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE GLOBAL
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .container { padding: 0 2rem; }
+  nav { padding: 1.2rem 2rem; }
+  nav.scrolled { padding: 0.8rem 2rem; }
+  .page-hero { padding: 5rem 2rem 3rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; padding: 3rem 2rem 2rem; }
+  .footer-bottom { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+  .page-hero { min-height: 45vh; padding: 5rem 1.5rem 2.5rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+</style>
+<style>
+/* ═══ PHILOSOPHY ═══ */
+.philosophy {
+  padding: 8rem 4rem;
+  background: var(--cream);
+}
+.philo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+}
+.philo-quote {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.5;
+  border-left: 2px solid var(--gold);
+  padding-left: 2rem;
+  margin-top: 2rem;
+}
+
+/* ═══ PILLARS ═══ */
+.pillars {
+  padding: 8rem 4rem;
+  background: var(--white);
+}
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+}
+.pillar {
+  padding: 3rem;
+  border: 1px solid var(--gray-border);
+  transition: all 0.5s var(--transition);
+  position: relative;
+}
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--gold);
+  transition: height 0.5s var(--transition);
+}
+.pillar:hover { border-color: transparent; box-shadow: 0 20px 60px rgba(16,19,63,0.08); transform: translateY(-4px); }
+.pillar:hover::before { height: 100%; }
+.pillar-num {
+  font-family: var(--font-serif);
+  font-size: 2.5rem; font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.pillar-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.pillar-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--gray-light);
+}
+
+/* ═══ PROCESS ═══ */
+.process {
+  padding: 8rem 4rem;
+  background: var(--navy);
+  color: var(--white);
+}
+.process .section-title { color: var(--white); }
+.process .section-desc { color: rgba(255,255,255,0.45); }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px; left: 10%; right: 10%;
+  height: 1px;
+  background: rgba(173,130,43,0.2);
+}
+.step {
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+.step-dot {
+  width: 14px; height: 14px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  background: var(--navy);
+  position: relative; z-index: 2;
+  transition: all 0.3s;
+}
+.step:hover .step-dot { background: var(--gold); transform: scale(1.3); }
+.step-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.step-text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ═══ VALUES ═══ */
+.values {
+  padding: 8rem 4rem;
+  background: var(--cream);
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+}
+.value-card {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+.value-icon {
+  width: 64px; height: 64px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.2rem; color: var(--gold);
+  transition: all 0.4s;
+}
+.value-card:hover .value-icon { background: var(--gold); color: var(--white); }
+.value-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.value-text {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--gray-light);
+}
+
+@media (max-width: 1024px) {
+  .philo-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(3, 1fr); }
+  .process-steps::before { display: none; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .philosophy, .pillars, .process, .values { padding: 5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">DISTRISKIN</a>
+  <ul class="nav-links">
+    <li><a href="approche.html" class="active">Notre Approche</a></li>
+    <li class="nav-dropdown"><a href="#">Nos Marques ▾</a><div class="nav-dropdown-menu"><a href="teslamed.html">TESLAMED</a><a href="niance.html">NIANCE</a><a href="joadams.html">JO ADAMS</a></div></li>
+    <li><a href="equipe.html">L'Équipe</a></li>
+    <li><a href="blog.html">Journal</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="menu-toggle" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="section-label">Notre Approche</span>
+    <h1 class="section-title" style="color:var(--white); font-size: clamp(2.2rem,5vw,3.8rem);">Votre succès est<br>notre <em>indicateur</em></h1>
+    <p class="section-desc" style="color:rgba(255,255,255,0.5);">Bien plus qu'un distributeur, nous sommes un partenaire engagé qui travaille main dans la main avec vous pour maximiser votre sell-out et fidéliser votre clientèle.</p>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philo-grid">
+    <div>
+      <span class="section-label reveal">Notre Philosophie</span>
+      <h2 class="section-title reveal reveal-d1">Le partenaire au centre<br>du <em>processus</em></h2>
+      <div class="gold-line reveal reveal-d1"></div>
+      <p class="section-desc reveal reveal-d2">Dans un secteur où les marques imposent souvent leur cahier des charges, Distriskin fait le choix inverse : nous remettons les partenaires au centre du processus de décision.</p>
+      <p class="section-desc reveal reveal-d2" style="margin-top:1rem;">Nous adaptons les solutions proposées aux vrais besoins du terrain, en écoutant, en analysant, et en co-construisant avec chaque partenaire une stratégie qui lui est propre.</p>
+    </div>
+    <div>
+      <blockquote class="philo-quote reveal reveal-d2">
+        « Nous ne vendons pas simplement des produits. Nous construisons des solutions qui permettent à nos partenaires de remplir leurs objectifs. »
+      </blockquote>
+      <p style="margin-top:1rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500;" class="reveal reveal-d3">— Maxence Deloison, Fondateur</p>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="text-center">
+    <span class="section-label reveal">Nos Piliers</span>
+    <h2 class="section-title reveal reveal-d1">Quatre engagements<br><em>concrets</em></h2>
+    <div class="gold-line gold-line-center reveal reveal-d1"></div>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar reveal">
+      <div class="pillar-num">01</div>
+      <div class="pillar-title">Différenciation</div>
+      <p class="pillar-text">Proposez une expérience unique grâce à des produits innovants qui attisent la curiosité d'une clientèle toujours plus exigeante. Nous vous aidons à vous positionner comme précurseur sur votre marché, en identifiant les produits et protocoles qui feront la différence dans votre établissement.</p>
+    </div>
+    <div class="pillar reveal reveal-d1">
+      <div class="pillar-num">02</div>
+      <div class="pillar-title">Formation d'excellence</div>
+      <p class="pillar-text">Bénéficiez de formations sur mesure dispensées par nos experts — dont Noélia Ségadé, forte de plus de 20 ans d'expérience dans les plus grands palaces parisiens. Protocoles de soins, techniques de vente, mise en avant des produits : chaque détail compte.</p>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar-num">03</div>
+      <div class="pillar-title">Accompagnement terrain</div>
+      <p class="pillar-text">Un agent commercial dédié à votre zone géographique, qui vous connaît, comprend vos enjeux et reste disponible. Nos agents couvrent l'ensemble du territoire français et sont sélectionnés pour leur expertise et leur sens du service.</p>
+    </div>
+    <div class="pillar reveal reveal-d1">
+      <div class="pillar-num">04</div>
+      <div class="pillar-title">Focus sell-out</div>
+      <p class="pillar-text">Notre objectif est le vôtre : maximiser vos ventes et votre rentabilité. Nous ne nous contentons pas de livrer des produits, nous travaillons avec vous pour transformer chaque référence en succès commercial grâce à une vision long-terme axée sur la fidélisation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="text-center">
+    <span class="section-label reveal" style="color:var(--gold);">Comment ça marche</span>
+    <h2 class="section-title reveal reveal-d1">Devenir partenaire<br>en <em>5 étapes</em></h2>
+    <div class="gold-line gold-line-center reveal reveal-d1"></div>
+  </div>
+  <div class="process-steps">
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-title">Échange</div>
+      <p class="step-text">Nous prenons le temps de comprendre votre établissement, votre clientèle et vos objectifs.</p>
+    </div>
+    <div class="step reveal reveal-d1">
+      <div class="step-dot"></div>
+      <div class="step-title">Audit</div>
+      <p class="step-text">Nous analysons votre offre actuelle et identifions les opportunités de différenciation.</p>
+    </div>
+    <div class="step reveal reveal-d2">
+      <div class="step-dot"></div>
+      <div class="step-title">Proposition</div>
+      <p class="step-text">Nous co-construisons une sélection de produits et protocoles adaptés à vos besoins.</p>
+    </div>
+    <div class="step reveal reveal-d3">
+      <div class="step-dot"></div>
+      <div class="step-title">Formation</div>
+      <p class="step-text">Vos équipes sont formées par nos experts pour maîtriser chaque produit et protocole.</p>
+    </div>
+    <div class="step reveal reveal-d4">
+      <div class="step-dot"></div>
+      <div class="step-title">Suivi</div>
+      <p class="step-text">Accompagnement continu, analyse des performances et ajustements pour maximiser votre sell-out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="text-center">
+    <span class="section-label reveal">Nos Valeurs</span>
+    <h2 class="section-title reveal reveal-d1">Ce qui nous<br><em>guide</em></h2>
+    <div class="gold-line gold-line-center reveal reveal-d1"></div>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="value-icon">◈</div>
+      <div class="value-title">Exigence</div>
+      <p class="value-text">Nous sélectionnons uniquement des marques qui répondent aux standards les plus élevés en termes de qualité, d'innovation et de résultats.</p>
+    </div>
+    <div class="value-card reveal reveal-d1">
+      <div class="value-icon">◇</div>
+      <div class="value-title">Transparence</div>
+      <p class="value-text">Une relation partenaire fondée sur la confiance, la clarté et l'honnêteté. Nous partageons avec vous notre expertise sans détour.</p>
+    </div>
+    <div class="value-card reveal reveal-d2">
+      <div class="value-icon">○</div>
+      <div class="value-title">Long terme</div>
+      <p class="value-text">Nous investissons dans la durée. Notre vision est axée sur la fidélisation de votre clientèle et la pérennité de votre activité.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <span class="section-label reveal" style="color:var(--gold);">Prêt à commencer ?</span>
+  <h2 class="section-title reveal reveal-d1">Discutons de <em>votre projet</em></h2>
+  <p class="section-desc reveal reveal-d2">Chaque partenariat commence par un échange. Contactez-nous pour découvrir comment nous pouvons vous aider.</p>
+  <a href="contact.html" class="btn-primary reveal reveal-d3">Nous contacter</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div><div class="footer-brand">DISTRISKIN</div><p class="footer-tagline">Expert de la distribution de produits premium pour les professionnels du soin et du bien-être.</p></div>
+    <div><div class="footer-col-title">Navigation</div><div class="footer-links"><a href="approche.html">Notre Approche</a><a href="equipe.html">L'Équipe</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div></div>
+    <div><div class="footer-col-title">Nos Marques</div><div class="footer-links"><a href="teslamed.html">TESLAMED</a><a href="niance.html">NIANCE</a><a href="joadams.html">JO ADAMS</a></div></div>
+    <div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="tel:+33688405645">+33 6 88 40 56 45</a><a href="mailto:contact@distriskin.com">contact@distriskin.com</a><a>69380 Dommartin</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 DISTRISKIN SARL</span><span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></span></div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80));
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
