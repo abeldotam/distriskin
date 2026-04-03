@@ -1,0 +1,68 @@
+/* TESLAMED brand-hero override */
+.teslamed-page .brand-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #0c0e30 60%, #080a24 100%);
+}
+.teslamed-page .brand-hero::before {
+  content: 'T';
+  position: absolute; top: 50%; right: 8%;
+  transform: translateY(-50%);
+  font-family: var(--font-serif); font-size: 30rem; font-weight: 300;
+  color: rgba(173,130,43,0.03);
+}
+
+/* TESLAMED brand-visual override */
+.teslamed-page .brand-visual {
+  background: linear-gradient(145deg, #0c0e30, #161850);
+}
+
+.benefits {
+  padding: 8rem 4rem; background: var(--white);
+}
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  max-width: var(--max-width); margin: 4rem auto 0;
+}
+.benefit {
+  padding: 2.5rem; border: 1px solid var(--gray-border); transition: all 0.5s var(--transition);
+}
+.benefit:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(16,19,63,0.06); }
+.benefit-num {
+  font-family: var(--font-serif); font-size: 2rem; font-weight: 300;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.benefit-title {
+  font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 600; color: var(--navy); margin-bottom: 1rem;
+}
+.benefit-text {
+  font-size: 0.85rem; font-weight: 300; line-height: 1.8; color: var(--gray-light);
+}
+
+.use-cases {
+  padding: 8rem 4rem; background: var(--navy); color: var(--white);
+}
+.use-cases .section-title { color: var(--white); }
+.uc-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  max-width: var(--max-width); margin: 4rem auto 0;
+}
+.uc-card {
+  padding: 3rem; border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s;
+}
+.uc-card:hover { background: rgba(255,255,255,0.03); border-color: rgba(173,130,43,0.2); }
+.uc-card-title {
+  font-size: 1rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 1rem;
+}
+.uc-card-text {
+  font-size: 0.88rem; font-weight: 300; line-height: 1.8;
+  color: rgba(255,255,255,0.45);
+}
+
+@media (max-width: 1024px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+  .uc-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .benefits, .use-cases { padding: 5rem 1.5rem; }
+}

@@ -1,0 +1,43 @@
+/* NIANCE brand-hero override */
+.niance-page .brand-hero {
+  background: linear-gradient(135deg, #0a1a12 0%, #0f2618 60%, var(--navy) 100%);
+}
+.niance-page .brand-hero::before {
+  content: 'N';
+  position: absolute; top: 50%; right: 8%;
+  transform: translateY(-50%);
+  font-family: var(--font-serif); font-size: 30rem; font-weight: 300;
+  color: rgba(173,130,43,0.03);
+}
+
+/* NIANCE brand-visual override */
+.niance-page .brand-visual {
+  background: linear-gradient(145deg, #0f2618, #1a3828);
+}
+
+.pillars-section { padding: 8rem 4rem; background: var(--white); }
+.niance-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: var(--max-width); margin: 4rem auto 0; }
+.np-card { padding: 3rem; border: 1px solid var(--gray-border); transition: all 0.5s var(--transition); position: relative; overflow: hidden; }
+.np-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.5s var(--transition); }
+.np-card:hover::before { transform: scaleX(1); }
+.np-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(16,19,63,0.06); border-color: transparent; }
+.np-icon { width: 48px; height: 48px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.1rem; color: var(--gold); margin-bottom: 1.5rem; }
+.np-title { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--navy); margin-bottom: 1rem; }
+.np-text { font-size: 0.88rem; font-weight: 300; line-height: 1.8; color: var(--gray-light); }
+
+.protocols { padding: 8rem 4rem; background: var(--navy); color: var(--white); }
+.protocols .section-title { color: var(--white); }
+.proto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: var(--max-width); margin: 4rem auto 0; }
+.proto-card { padding: 2.5rem; border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s; text-align: center; }
+.proto-card:hover { background: rgba(255,255,255,0.03); border-color: rgba(173,130,43,0.2); }
+.proto-num { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; color: var(--gold); margin-bottom: 1rem; }
+.proto-title { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.8rem; }
+.proto-text { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.4); }
+
+@media (max-width: 1024px) {
+  .niance-pillars { grid-template-columns: 1fr; }
+  .proto-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .pillars-section, .protocols { padding: 5rem 1.5rem; }
+}

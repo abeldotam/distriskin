@@ -1,0 +1,260 @@
+/* ═══ INTRO STRIP ═══ */
+.intro-strip {
+  background: var(--cream);
+  padding: 6rem 4rem;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.intro-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.stat {
+  border-left: 1px solid var(--gold);
+  padding-left: 1.2rem;
+}
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
+.intro-visual {
+  height: 420px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  position: relative;
+  overflow: hidden;
+}
+.intro-visual::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px; height: 180px;
+  border: 1px solid rgba(173,130,43,0.2);
+  border-radius: 50%;
+  animation: pulse 5s infinite;
+}
+.intro-visual {background: url(/images/logo-distriskin.png) center center / contain no-repeat var(--navy) !important;}
+.intro-visual-hidden::after {
+  content: 'DS';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 5rem; font-weight: 300;
+  color: rgba(173,130,43,0.1);
+  letter-spacing: 0.3em;
+}
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.4; }
+  50% { transform: translate(-50%,-50%) scale(1.4); opacity: 0.08; }
+}
+
+/* ═══ BRANDS OVERVIEW ═══ */
+.brands-overview {
+  padding: 8rem 4rem;
+  background: var(--white);
+}
+.brands-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+}
+.brand-ov-card {
+  border: 1px solid var(--gray-border);
+  padding: 3rem 2.5rem;
+  transition: all 0.5s var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.brand-ov-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--transition);
+}
+.brand-ov-card:hover::before { transform: scaleX(1); }
+.brand-ov-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(16,19,63,0.08);
+  border-color: transparent;
+}
+.brand-ov-icon {
+  width: 52px; height: 52px;
+  border: 1px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 2rem;
+}
+.brand-ov-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+.brand-ov-sub {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+.brand-ov-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--gray-light);
+  margin-bottom: 2rem;
+}
+.brand-ov-link {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: color 0.3s;
+}
+.brand-ov-link:hover { color: var(--gold); }
+.brand-ov-link .arrow {
+  width: 20px; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.brand-ov-link:hover .arrow { width: 35px; }
+
+/* ═══ APPROACH HIGHLIGHTS ═══ */
+.approach-hl {
+  background: var(--navy);
+  padding: 8rem 4rem;
+  color: var(--white);
+}
+.approach-hl .section-title { color: var(--white); }
+.approach-hl .section-desc { color: rgba(255,255,255,0.45); }
+.approach-hl-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+}
+.ahl-card {
+  padding: 3rem 2rem;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.5s;
+  cursor: default;
+}
+.ahl-card:last-child { border-right: none; }
+.ahl-card:hover { background: rgba(255,255,255,0.03); }
+.ahl-num {
+  font-family: var(--font-serif);
+  font-size: 3rem; font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 1.5rem; line-height: 1;
+}
+.ahl-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.ahl-text {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.45);
+}
+.approach-hl-cta {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* ═══ CLIENTS STRIP ═══ */
+.clients-strip {
+  background: var(--cream);
+  padding: 6rem 4rem;
+  text-align: center;
+}
+.clients-row {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 3rem auto 0;
+}
+.cl-type {
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+}
+.cl-icon {
+  width: 72px; height: 72px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.3rem;
+  color: var(--gold);
+  transition: all 0.4s;
+}
+.cl-type:hover .cl-icon {
+  background: var(--gold);
+  color: var(--white);
+  transform: scale(1.05);
+}
+.cl-name {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+/* ═══ RESPONSIVE HOME ═══ */
+@media (max-width: 1024px) {
+  .intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .intro-visual { height: 280px; }
+  .brands-overview-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .approach-hl-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .home-hero { min-height: 600px; }
+  .hero-cta-group { flex-direction: column; align-items: center; }
+  .approach-hl-grid { grid-template-columns: 1fr; }
+  .brands-overview { padding: 5rem 1.5rem; }
+  .intro-strip { padding: 4rem 1.5rem; }
+  .approach-hl { padding: 5rem 1.5rem; }
+  .clients-strip { padding: 4rem 1.5rem; }
+}

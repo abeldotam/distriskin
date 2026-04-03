@@ -1,0 +1,41 @@
+/* JO ADAMS brand-hero override */
+.joadams-page .brand-hero {
+  background: linear-gradient(135deg, #1a0f0f 0%, #2a1515 50%, var(--navy) 100%);
+}
+.joadams-page .brand-hero::before {
+  content: 'JA';
+  position: absolute; top: 50%; right: 6%;
+  transform: translateY(-50%);
+  font-family: var(--font-serif); font-size: 25rem; font-weight: 300;
+  color: rgba(173,130,43,0.03); letter-spacing: 0.1em;
+}
+
+/* JO ADAMS brand-visual override */
+.joadams-page .brand-visual {
+  background: linear-gradient(145deg, #2a1515, #3d1f1f);
+}
+
+.universe { padding: 8rem 4rem; background: var(--white); }
+.uni-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: var(--max-width); margin: 4rem auto 0; }
+.uni-card { padding: 3rem 2.5rem; border: 1px solid var(--gray-border); text-align: center; transition: all 0.5s var(--transition); }
+.uni-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(16,19,63,0.06); }
+.uni-icon { width: 56px; height: 56px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.1rem; color: var(--gold); transition: all 0.4s; }
+.uni-card:hover .uni-icon { background: var(--gold); color: var(--white); }
+.uni-title { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--navy); margin-bottom: 1rem; }
+.uni-text { font-size: 0.88rem; font-weight: 300; line-height: 1.8; color: var(--gray-light); }
+
+.for-pros { padding: 8rem 4rem; background: var(--navy); color: var(--white); }
+.for-pros .section-title { color: var(--white); }
+.fp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: var(--max-width); margin: 4rem auto 0; }
+.fp-card { padding: 3rem; border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s; }
+.fp-card:hover { background: rgba(255,255,255,0.03); border-color: rgba(173,130,43,0.2); }
+.fp-title { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; }
+.fp-text { font-size: 0.88rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.45); }
+
+@media (max-width: 1024px) {
+  .uni-grid { grid-template-columns: 1fr; }
+  .fp-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .universe, .for-pros { padding: 5rem 1.5rem; }
+}

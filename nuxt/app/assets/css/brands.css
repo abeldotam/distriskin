@@ -1,0 +1,39 @@
+.brand-intro {
+  padding: 8rem 4rem; background: var(--cream);
+}
+.brand-intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  max-width: var(--max-width); margin: 0 auto; align-items: center;
+}
+.brand-visual {
+  height: 400px; position: relative; overflow: hidden;
+}
+.brand-visual::after {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%); width: 150px; height: 150px;
+  border: 1px solid rgba(173,130,43,0.15); border-radius: 50%;
+}
+
+.other-brands {
+  padding: 5rem 4rem; background: var(--cream); text-align: center;
+}
+.ob-row {
+  display: flex; justify-content: center; gap: 2rem;
+  max-width: 800px; margin: 2rem auto 0;
+}
+.ob-link {
+  padding: 1.5rem 3rem; border: 1px solid var(--gray-border);
+  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 500; color: var(--navy); transition: all 0.3s;
+}
+.ob-link:hover { border-color: var(--gold); color: var(--gold); }
+
+@media (max-width: 1024px) {
+  .brand-intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .brand-visual { height: 280px; }
+}
+@media (max-width: 768px) {
+  .brand-hero { padding: 5rem 1.5rem 3rem; }
+  .brand-intro, .other-brands { padding: 5rem 1.5rem; }
+  .ob-row { flex-direction: column; align-items: center; }
+}

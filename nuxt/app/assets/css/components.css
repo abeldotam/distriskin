@@ -1,0 +1,21 @@
+/* ═══════════════════════════════════════════
+   CTA BANNER (reusable)
+   ═══════════════════════════════════════════ */
+.cta-banner {
+  background: var(--navy);
+  padding: 6rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px;
+  border: 1px solid rgba(173, 130, 43, 0.05);
+  border-radius: 50%;
+}
+.cta-banner .section-title { color: var(--white); max-width: 700px; margin: 0 auto 1rem; }
+.cta-banner .section-desc { color: rgba(255,255,255,0.45); margin: 0 auto 2.5rem; text-align: center; }
