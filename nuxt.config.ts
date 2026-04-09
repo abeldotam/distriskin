@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/brands.css'],
 
   modules: [
     '@nuxt/fonts',
@@ -17,7 +17,14 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
   ],
 
-  ogImage: { enabled: false },
+  ogImage: {
+    enabled: true,
+  },
+
+  image: {
+    quality: 90,
+    formats: ['webp', 'avif'],
+  },
 
   fonts: {
     families: [

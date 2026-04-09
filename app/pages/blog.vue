@@ -4,6 +4,7 @@ useSeoMeta({
   ogTitle: 'Journal — DISTRISKIN',
   description: 'Actualités, tendances et expertise du marché premium du soin et du bien-être par Distriskin.',
   ogDescription: 'Actualités, tendances et expertise du marché premium du soin et du bien-être par Distriskin.',
+  ogImage: '/images/logo-distriskin.jpeg',
 })
 </script>
 
@@ -11,8 +12,8 @@ useSeoMeta({
 <div class="page-hero">
   <div class="page-hero-content">
     <span class="section-label">Journal</span>
-    <h1 class="section-title" style="color:var(--white); font-size: clamp(2.2rem,5vw,3.8rem);">Tendances, expertise<br>et <em>actualités</em></h1>
-    <p class="section-desc" style="color:rgba(255,255,255,0.5);">Décryptages du marché, nouveautés produits, retours d'expérience et conseils pour les professionnels du soin premium.</p>
+    <h1 class="section-title">Tendances, expertise<br>et <em>actualités</em></h1>
+    <p class="section-desc">Décryptages du marché, nouveautés produits, retours d'expérience et conseils pour les professionnels du soin premium.</p>
   </div>
 </div>
 
@@ -37,7 +38,7 @@ useSeoMeta({
         <h2 class="bf-title">Comment les spas d'hôtels de luxe réinventent l'expérience client en 2025</h2>
         <p class="bf-excerpt">Le marché du spa hôtelier évolue rapidement. Entre personnalisation poussée, technologies innovantes et approche holistique, les établissements premium redéfinissent les standards de l'excellence. Décryptage des tendances qui façonnent le secteur.</p>
         <span class="bf-meta">12 min de lecture · Juin 2025</span>
-        <span class="bf-link" style="margin-top:1.5rem;">Lire l'article <span class="arrow"></span></span>
+        <span class="bf-link">Lire l'article <span class="arrow"></span></span>
       </div>
     </a>
 
@@ -107,7 +108,7 @@ useSeoMeta({
 </section>
 
 <section class="cta-banner">
-  <span v-reveal class="section-label" style="color:var(--gold);">Restez informé</span>
+  <span v-reveal class="section-label">Restez informé</span>
   <h2 v-reveal.d1 class="section-title">Recevez nos <em>dernières actualités</em></h2>
   <p v-reveal.d2 class="section-desc">Inscrivez-vous à notre newsletter pour recevoir les tendances du secteur et les nouveautés Distriskin.</p>
   <NuxtLink to="/contact" v-reveal.d3 class="btn-primary">S'inscrire</NuxtLink>

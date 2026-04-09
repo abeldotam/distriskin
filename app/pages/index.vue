@@ -4,6 +4,7 @@ useSeoMeta({
   ogTitle: 'DISTRISKIN — Distribution Premium Beauté & Bien-être',
   description: 'Distriskin, distributeur de marques premium pour les professionnels du soin et du bien-être : TESLAMED, NIANCE, JO ADAMS.',
   ogDescription: 'Distriskin, distributeur de marques premium pour les professionnels du soin et du bien-être : TESLAMED, NIANCE, JO ADAMS.',
+  ogImage: '/images/logo-distriskin.jpeg',
 })
 </script>
 
@@ -57,7 +58,7 @@ useSeoMeta({
       <h2 class="section-title reveal reveal-d1" v-reveal>Un partenaire dédié<br>à <em>votre réussite</em></h2>
       <div class="gold-line reveal reveal-d1" v-reveal></div>
       <p class="section-desc reveal reveal-d2" v-reveal>Distriskin est un expert de la distribution de produits premium auprès de professionnels exigeants. Nous proposons un assortiment de marques haut de gamme accompagné d'un suivi sur mesure, pensé pour vous aider à vous différencier.</p>
-      <p class="section-desc reveal reveal-d2" v-reveal style="margin-top:16px;">Notre focus : le sell-out. Nous traitons nos clients comme de véritables partenaires et travaillons main dans la main pour adapter des solutions qui répondent à vos objectifs.</p>
+      <p class="section-desc reveal reveal-d2 section-desc-spaced" v-reveal>Notre focus : le sell-out. Nous traitons nos clients comme de véritables partenaires et travaillons main dans la main pour adapter des solutions qui répondent à vos objectifs.</p>
       <div class="intro-stats reveal reveal-d3" v-reveal>
         <div><div class="stat-number">3</div><div class="stat-label">Marques d'exception</div></div>
         <div><div class="stat-number">8+</div><div class="stat-label">Experts terrain</div></div>
@@ -65,7 +66,7 @@ useSeoMeta({
         <div><div class="stat-number">FR</div><div class="stat-label">Couverture nationale</div></div>
       </div>
     </div>
-    <div class="intro-visual reveal reveal-d2" v-reveal><NuxtImg src="/images/logo-distriskin.jpeg" alt="DISTRISKIN" class="intro-visual-logo" loading="lazy" /></div>
+    <div class="intro-visual reveal reveal-d2" v-reveal><NuxtImg src="/images/logo-distriskin.jpeg" alt="DISTRISKIN" class="intro-visual-logo" loading="lazy" width="800" height="800" /></div>
   </div>
 </section>
 
@@ -131,7 +132,7 @@ useSeoMeta({
       <p class="approach-text">Focus sell-out et rentabilité. Votre succès commercial est notre indicateur de performance.</p>
     </div>
   </div>
-  <div class="text-center reveal" v-reveal style="margin-top:60px;">
+  <div class="text-center reveal approach-cta-wrap" v-reveal>
     <NuxtLink to="/approche" class="btn-primary">En savoir plus</NuxtLink>
   </div>
 </section>
@@ -151,11 +152,14 @@ useSeoMeta({
 <!-- CTA -->
 <section class="cta-section">
   <p class="section-label reveal" v-reveal>Travaillons Ensemble</p>
-  <h2 class="section-title reveal reveal-d1" v-reveal style="margin-bottom:24px;">Prêt à proposer<br>des produits <em>d'exception</em> ?</h2>
+  <h2 class="section-title reveal reveal-d1 cta-title-spaced" v-reveal>Prêt à proposer<br>des produits <em>d'exception</em> ?</h2>
   <p class="section-desc reveal reveal-d2" v-reveal>Échangeons sur vos besoins et construisons ensemble une offre qui fera la différence auprès de votre clientèle.</p>
   <NuxtLink to="/contact" class="btn-primary reveal reveal-d3" v-reveal>Nous contacter</NuxtLink>
 </section>
 </template>
 
 <style scoped>
+.section-desc-spaced { margin-top: 16px; }
+.approach-cta-wrap { margin-top: 60px; }
+.cta-title-spaced { margin-bottom: 24px; }
 </style>

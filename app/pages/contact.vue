@@ -4,20 +4,21 @@ useSeoMeta({
   ogTitle: 'Contact — DISTRISKIN',
   description: 'Vous êtes un professionnel du soin ou du bien-être et vous souhaitez proposer des produits d\'exception ? Échangeons.',
   ogDescription: 'Vous êtes un professionnel du soin ou du bien-être et vous souhaitez proposer des produits d\'exception ? Échangeons.',
+  ogImage: '/images/logo-distriskin.jpeg',
 })
 </script>
 
 <template>
 <div class="page-hero"><div class="page-hero-content">
   <p class="section-label">Contact</p>
-  <h1 class="section-title" style="font-size:clamp(36px,6vw,64px);">Construisons <em>ensemble</em></h1>
-  <p class="section-desc" style="color:var(--gray); margin-top:24px;">Vous êtes un professionnel du soin ou du bien-être et vous souhaitez proposer des produits d'exception ? Échangeons.</p>
+  <h1 class="section-title hero-title-large">Construisons <em>ensemble</em></h1>
+  <p class="section-desc hero-desc">Vous êtes un professionnel du soin ou du bien-être et vous souhaitez proposer des produits d'exception ? Échangeons.</p>
 </div></div>
 
 <div class="contact-section">
   <div class="contact-info">
     <p class="section-label" v-reveal>Coordonnées</p>
-    <h2 class="section-title" v-reveal.d1 style="margin-bottom:32px;">Restons en <em>contact</em></h2>
+    <h2 class="section-title contact-title-spaced" v-reveal.d1>Restons en <em>contact</em></h2>
     <div class="cd" v-reveal.d2><div class="cd-label">Téléphone</div><div class="cd-value"><a href="tel:+33688405645">+33 6 88 40 56 45</a></div></div>
     <div class="cd" v-reveal.d2><div class="cd-label">Email</div><div class="cd-value"><a href="mailto:contact@distriskin.com">contact@distriskin.com</a></div></div>
     <div class="cd" v-reveal.d3><div class="cd-label">Siège Social</div><div class="cd-value">DISTRISKIN SARL<br>421 rue des Cordineaux<br>69380 Dommartin, France</div></div>
@@ -39,7 +40,7 @@ useSeoMeta({
       <div class="fg" v-reveal><label>Type d'établissement *</label><select required><option value="">Sélectionnez...</option><option>Spa d'hôtel 4* / 5* / Palace</option><option>Institut de beauté premium</option><option>Parfumerie sélective</option><option>Pharmacie / Centre médical</option><option>Concept store / Wellness</option><option>Autre</option></select></div>
       <div class="fg" v-reveal><label>Marques qui vous intéressent</label><select><option value="">Sélectionnez...</option><option>TESLAMED — Technologie esthétique</option><option>NIANCE — Cosmétique suisse</option><option>JO ADAMS — Parfumerie de niche</option><option>Plusieurs marques / Synergie</option><option>Je souhaite en discuter</option></select></div>
       <div class="fg" v-reveal><label>Votre projet</label><textarea placeholder="Décrivez vos besoins, vos objectifs..."></textarea></div>
-      <button type="submit" class="btn-primary" v-reveal style="width:100%; border:none; cursor:pointer;">Envoyer ma demande</button>
+      <button type="submit" class="btn-primary btn-submit" v-reveal>Envoyer ma demande</button>
     </form>
   </div>
 </div>
@@ -71,6 +72,10 @@ useSeoMeta({
 .page-hero { min-height: 50vh; padding: 160px 60px 80px; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,169,81,0.04) 0%, transparent 70%), var(--black); display: flex; align-items: flex-end; position: relative; overflow: hidden; }
 .page-hero::before { content: ''; position: absolute; top: -40%; right: -15%; width: 60vw; height: 60vw; border-radius: 50%; border: 1px solid rgba(200,169,81,0.05); }
 .page-hero-content { max-width: 1400px; width: 100%; margin: 0 auto; position: relative; z-index: 2; }
+.hero-title-large { font-size: clamp(36px, 6vw, 64px); }
+.hero-desc { color: var(--gray); margin-top: 24px; }
+.contact-title-spaced { margin-bottom: 32px; }
+.btn-submit { width: 100%; border: none; cursor: pointer; }
 
 .contact-section { display: grid; grid-template-columns: 1fr 1.2fr; min-height: 600px; }
 .contact-info { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(200,169,81,0.06); }
