@@ -1,3 +1,7 @@
+<script setup>
+useBreadcrumbItems()
+</script>
+
 <template>
   <div>
     <AppNavbar />

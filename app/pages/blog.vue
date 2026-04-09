@@ -29,7 +29,7 @@ useSeoMeta({
     </div>
 
     <!-- Featured -->
-    <a href="#" v-reveal class="blog-featured">
+    <div v-reveal class="blog-featured">
       <div class="bf-image">
         <span class="bf-badge">À la une</span>
       </div>
@@ -38,13 +38,12 @@ useSeoMeta({
         <h2 class="bf-title">Comment les spas d'hôtels de luxe réinventent l'expérience client en 2025</h2>
         <p class="bf-excerpt">Le marché du spa hôtelier évolue rapidement. Entre personnalisation poussée, technologies innovantes et approche holistique, les établissements premium redéfinissent les standards de l'excellence. Décryptage des tendances qui façonnent le secteur.</p>
         <span class="bf-meta">12 min de lecture · Juin 2025</span>
-        <span class="bf-link">Lire l'article <span class="arrow"></span></span>
       </div>
-    </a>
+    </div>
 
     <!-- Grid -->
     <div class="blog-grid">
-      <a href="#" v-reveal class="blog-card">
+      <div v-reveal class="blog-card">
         <div class="bc-image cat-marques"></div>
         <div class="bc-content">
           <div class="bc-cat">Nos Marques</div>
@@ -52,8 +51,8 @@ useSeoMeta({
           <p class="bc-excerpt">Découvrez comment combiner cosmétiques suisses et technologie esthétique pour des protocoles d'une efficacité redoublée.</p>
           <span class="bc-meta">8 min · Mai 2025</span>
         </div>
-      </a>
-      <a href="#" v-reveal.d1 class="blog-card">
+      </div>
+      <div v-reveal.d1 class="blog-card">
         <div class="bc-image cat-expertise"></div>
         <div class="bc-content">
           <div class="bc-cat">Expertise</div>
@@ -61,8 +60,8 @@ useSeoMeta({
           <p class="bc-excerpt">Nos conseils terrain pour transformer chaque produit en succès commercial auprès de votre clientèle.</p>
           <span class="bc-meta">6 min · Avril 2025</span>
         </div>
-      </a>
-      <a href="#" v-reveal.d2 class="blog-card">
+      </div>
+      <div v-reveal.d2 class="blog-card">
         <div class="bc-image cat-tendances"></div>
         <div class="bc-content">
           <div class="bc-cat">Tendances</div>
@@ -70,8 +69,8 @@ useSeoMeta({
           <p class="bc-excerpt">Pourquoi les extraits de parfums d'exception séduisent de plus en plus les points de vente premium.</p>
           <span class="bc-meta">7 min · Mars 2025</span>
         </div>
-      </a>
-      <a href="#" v-reveal class="blog-card">
+      </div>
+      <div v-reveal class="blog-card">
         <div class="bc-image cat-partenaires"></div>
         <div class="bc-content">
           <div class="bc-cat">Partenaires</div>
@@ -79,8 +78,8 @@ useSeoMeta({
           <p class="bc-excerpt">Esthéticien de formation et expert du retail de luxe suisse, David renforce notre présence sur un marché stratégique.</p>
           <span class="bc-meta">3 min · Février 2025</span>
         </div>
-      </a>
-      <a href="#" v-reveal.d1 class="blog-card">
+      </div>
+      <div v-reveal.d1 class="blog-card">
         <div class="bc-image cat-expertise"></div>
         <div class="bc-content">
           <div class="bc-cat">Expertise</div>
@@ -88,8 +87,8 @@ useSeoMeta({
           <p class="bc-excerpt">Compléments alimentaires et cosmétiques, une combinaison gagnante pour les établissements qui veulent se différencier.</p>
           <span class="bc-meta">9 min · Janvier 2025</span>
         </div>
-      </a>
-      <a href="#" v-reveal.d2 class="blog-card">
+      </div>
+      <div v-reveal.d2 class="blog-card">
         <div class="bc-image cat-marques"></div>
         <div class="bc-content">
           <div class="bc-cat">Nos Marques</div>
@@ -97,11 +96,11 @@ useSeoMeta({
           <p class="bc-excerpt">Tout ce que vous devez savoir sur les dispositifs de technologie esthétique avancée et leur intégration en spa.</p>
           <span class="bc-meta">10 min · Décembre 2024</span>
         </div>
-      </a>
+      </div>
     </div>
 
     <div v-reveal class="blog-more">
-      <a class="btn-outline-dark">Voir plus d'articles</a>
+      <span class="blog-coming">Nouveaux articles à venir</span>
     </div>
 
   </div>
@@ -325,6 +324,10 @@ useSeoMeta({
 
 .blog-more {
   text-align: center; margin-top: 4rem;
+}
+.blog-coming {
+  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gray-light); font-weight: 400;
 }
 
 @media (max-width: 1024px) {
