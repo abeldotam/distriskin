@@ -17,7 +17,7 @@ useSeoMeta({
 <!-- MAXENCE -->
 <section class="featured">
   <div class="featured-grid">
-    <div class="featured-photo" v-reveal data-initials="MD"><img src="/images/maxence-deloison.jpg" alt="Maxence Deloison"></div>
+    <div class="featured-photo" v-reveal data-initials="MD"><NuxtImg src="/images/maxence-deloison.jpg" alt="Maxence Deloison" loading="lazy" /></div>
 <div>
       <p class="section-label" v-reveal>Fondateur</p>
       <div class="featured-name" v-reveal.d1>Maxence Deloison</div>
@@ -43,7 +43,7 @@ useSeoMeta({
       <p class="featured-bio" v-reveal.d3>Elle accompagne aussi les professionnels dans l'élévation de leurs standards et de leur expérience client.</p>
       <p class="featured-bio" v-reveal.d3>Aujourd'hui, elle propose du mentorat, des audits qualité et des évaluations mystère. Galicienne basée à Paris, elle intervient en France et à l'international.</p>
     </div>
-    <div class="featured-photo" v-reveal data-initials="NS" style="direction: ltr;"><img src="/images/noelia-segade.jpg" alt="Noelia Ségadé"></div>
+    <div class="featured-photo" v-reveal data-initials="NS" style="direction: ltr;"><NuxtImg src="/images/noelia-segade.jpg" alt="Noelia Ségadé" loading="lazy" /></div>
   </div>
 </section>
 
