@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 DISTRISKIN — Distribution Premium Beauté. Tous droits réservés.</p>
+      <p>&copy; {{ new Date().getFullYear() }} DISTRISKIN — Distribution Premium Beauté. Tous droits réservés.</p>
       <p><NuxtLink to="/mentions-legales">Mentions légales</NuxtLink> · <NuxtLink to="/confidentialite">Confidentialité</NuxtLink></p>
     </div>
   </footer>
