@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css', '~/assets/css/brands.css'],
 
   modules: [
+    '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxtjs/seo',
@@ -64,6 +65,8 @@ export default defineNuxtConfig({
         '/marques/teslamed',
         '/marques/niance',
         '/marques/joadams',
+        '/mentions-legales',
+        '/confidentialite',
       ],
     },
   },

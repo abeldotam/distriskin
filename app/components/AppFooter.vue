@@ -33,7 +33,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 DISTRISKIN — Distribution Premium Beauté. Tous droits réservés.</p>
-      <p><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></p>
+      <p><NuxtLink to="/mentions-legales">Mentions légales</NuxtLink> · <NuxtLink to="/confidentialite">Confidentialité</NuxtLink></p>
     </div>
   </footer>
 </template>
