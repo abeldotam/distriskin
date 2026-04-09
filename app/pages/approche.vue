@@ -4,6 +4,7 @@ useSeoMeta({
   ogTitle: 'Notre Approche — DISTRISKIN',
   description: 'Découvrez l\'approche unique de Distriskin : un accompagnement sur mesure axé sur le sell-out et la réussite de nos partenaires.',
   ogDescription: 'Découvrez l\'approche unique de Distriskin : un accompagnement sur mesure axé sur le sell-out et la réussite de nos partenaires.',
+  ogImage: '/images/logo-distriskin.jpeg',
 })
 </script>
 
@@ -11,8 +12,8 @@ useSeoMeta({
 <div class="page-hero">
   <div class="page-hero-content">
     <p class="section-label">Notre Approche</p>
-    <h1 class="section-title" style="font-size:clamp(36px,6vw,64px);">Votre succès est<br>notre <em>indicateur</em></h1>
-    <p class="section-desc" style="color:var(--gray); margin-top:24px;">Bien plus qu'un distributeur, nous sommes un partenaire engagé qui travaille main dans la main avec vous pour maximiser votre sell-out et fidéliser votre clientèle.</p>
+    <h1 class="section-title hero-title-large">Votre succès est<br>notre <em>indicateur</em></h1>
+    <p class="section-desc hero-desc">Bien plus qu'un distributeur, nous sommes un partenaire engagé qui travaille main dans la main avec vous pour maximiser votre sell-out et fidéliser votre clientèle.</p>
   </div>
 </div>
 
@@ -23,11 +24,11 @@ useSeoMeta({
       <h2 class="section-title reveal reveal-d1" v-reveal>Le partenaire au centre<br>du <em>processus</em></h2>
       <div class="gold-line reveal reveal-d1" v-reveal></div>
       <p class="section-desc reveal reveal-d2" v-reveal>Dans un secteur où les marques imposent souvent leur cahier des charges, Distriskin fait le choix inverse : nous remettons les partenaires au centre du processus de décision.</p>
-      <p class="section-desc reveal reveal-d2" v-reveal style="margin-top:16px;">Nous adaptons les solutions proposées aux vrais besoins du terrain, en écoutant, en analysant, et en co-construisant avec chaque partenaire une stratégie qui lui est propre.</p>
+      <p class="section-desc reveal reveal-d2 section-desc-spaced" v-reveal>Nous adaptons les solutions proposées aux vrais besoins du terrain, en écoutant, en analysant, et en co-construisant avec chaque partenaire une stratégie qui lui est propre.</p>
     </div>
     <div>
       <blockquote class="philo-quote reveal reveal-d2" v-reveal>« Nous ne vendons pas simplement des produits. Nous construisons des solutions qui permettent à nos partenaires de remplir leurs objectifs. »</blockquote>
-      <p style="margin-top:16px; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); font-weight:600;" class="reveal reveal-d3" v-reveal>— Maxence Deloison, Fondateur</p>
+      <p class="quote-attribution reveal reveal-d3" v-reveal>— Maxence Deloison, Fondateur</p>
     </div>
   </div>
 </section>
@@ -89,7 +90,7 @@ useSeoMeta({
 
 <section class="cta-section">
   <p class="section-label reveal" v-reveal>Prêt à commencer ?</p>
-  <h2 class="section-title reveal reveal-d1" v-reveal style="margin-bottom:24px;">Discutons de <em>votre projet</em></h2>
+  <h2 class="section-title reveal reveal-d1 cta-title-spaced" v-reveal>Discutons de <em>votre projet</em></h2>
   <p class="section-desc reveal reveal-d2" v-reveal>Chaque partenariat commence par un échange. Contactez-nous pour découvrir comment nous pouvons vous aider.</p>
   <NuxtLink to="/contact" class="btn-primary reveal reveal-d3" v-reveal>Nous contacter</NuxtLink>
 </section>
@@ -108,6 +109,11 @@ useSeoMeta({
   border: 1px solid rgba(200,169,81,0.05);
 }
 .page-hero-content { max-width: 1400px; width: 100%; margin: 0 auto; position: relative; z-index: 2; }
+.hero-title-large { font-size: clamp(36px, 6vw, 64px); }
+.hero-desc { color: var(--gray); margin-top: 24px; }
+.section-desc-spaced { margin-top: 16px; }
+.quote-attribution { margin-top: 16px; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.cta-title-spaced { margin-bottom: 24px; }
 
 /* ══════ PHILOSOPHY ══════ */
 .philosophy { padding: 140px 60px; }

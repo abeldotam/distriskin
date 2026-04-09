@@ -1,4 +1,23 @@
 export default defineNuxtPlugin((nuxtApp) => {
+  let observer: IntersectionObserver | null = null
+
+  if (import.meta.client) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement
+            el.style.opacity = '1'
+            el.style.transform = 'translateY(0)'
+            el.classList.add('visible')
+            observer!.unobserve(el)
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+  }
+
   nuxtApp.vueApp.directive('reveal', {
     getSSRProps() {
       return {}
@@ -9,28 +28,10 @@ export default defineNuxtPlugin((nuxtApp) => {
         el.style.transform = 'translateY(30px)'
         el.style.transition = 'opacity 0.8s ease, transform 0.8s ease'
       }
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = '1'
-              entry.target.style.transform = 'translateY(0)'
-              ;(entry.target as HTMLElement).classList.add('visible')
-            }
-          })
-        },
-        { threshold: 0.1 },
-      )
-
-      observer.observe(el)
-      ;(el as any)._revealObserver = observer
+      observer?.observe(el)
     },
     unmounted(el: HTMLElement) {
-      const observer = (el as any)._revealObserver
-      if (observer) {
-        observer.disconnect()
-      }
+      observer?.unobserve(el)
     },
   })
 })

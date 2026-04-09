@@ -4,14 +4,15 @@ useSeoMeta({
   ogTitle: 'NIANCE — Cosmétiques suisses haut de gamme | DISTRISKIN',
   description: 'Découvrez NIANCE, marque suisse holistique de cosmétiques très haut de gamme et compléments alimentaires. Technologie Epigen12, anti-âge premium.',
   ogDescription: 'Découvrez NIANCE, marque suisse holistique de cosmétiques très haut de gamme et compléments alimentaires. Technologie Epigen12, anti-âge premium.',
+  ogImage: '/images/logo-distriskin.jpeg',
 })
 </script>
 
 <template>
 <div class="page-hero"><div class="page-hero-content">
   <p class="section-label">Suisse · 100% développé et fabriqué en Suisse</p>
-  <h1 class="section-title" style="font-size:clamp(36px,6vw,64px);">NIANCE<br><em>L'excellence suisse au service de la beauté et de la longévité</em></h1>
-  <p class="section-desc" style="color:var(--gray); margin-top:24px;">Soins dermocosmétiques de haute performance et compléments alimentaires innovants, formulés pour agir au cœur des mécanismes biologiques du vieillissement.</p>
+  <h1 class="section-title hero-title-large">NIANCE<br><em>L'excellence suisse au service de la beauté et de la longévité</em></h1>
+  <p class="section-desc hero-desc">Soins dermocosmétiques de haute performance et compléments alimentaires innovants, formulés pour agir au cœur des mécanismes biologiques du vieillissement.</p>
 </div></div>
 
 <section class="brand-intro"><div class="brand-intro-grid">
@@ -20,9 +21,9 @@ useSeoMeta({
     <h2 v-reveal.d1 class="section-title">La beauté et la longévité<br>sont <em>indissociables</em></h2>
     <div v-reveal.d1 class="gold-line"></div>
     <p v-reveal.d2 class="section-desc">NIANCE incarne l'excellence suisse au service de la beauté holistique et de la longévité. La marque développe des soins haute performance et des compléments alimentaires innovants, formulés pour agir au cœur des mécanismes biologiques du vieillissement.</p>
-    <p v-reveal.d2 class="section-desc" style="margin-top:16px;">L'approche NIANCE repose sur une vision intégrée : soutenir la peau et le corps en profondeur, afin d'accompagner un vieillissement harmonieux, maîtrisé et durable. Tous les produits sont formulés par des médecins experts, testés scientifiquement par des laboratoires indépendants.</p>
+    <p v-reveal.d2 class="section-desc section-desc-spaced">L'approche NIANCE repose sur une vision intégrée : soutenir la peau et le corps en profondeur, afin d'accompagner un vieillissement harmonieux, maîtrisé et durable. Tous les produits sont formulés par des médecins experts, testés scientifiquement par des laboratoires indépendants.</p>
   </div>
-  <div v-reveal.d2 class="brand-visual"><NuxtImg src="/images/niance-hero.png" alt="NIANCE Switzerland" loading="lazy" /></div>
+  <div v-reveal.d2 class="brand-visual"><NuxtImg src="/images/niance-hero.png" alt="NIANCE Switzerland" loading="lazy" width="850" height="859" /></div>
 </div></section>
 
 <section class="stats-strip">
@@ -71,46 +72,13 @@ useSeoMeta({
 
 <section class="other-brands"><p v-reveal class="section-label">Nos Autres Marques</p><div v-reveal.d1 class="ob-row"><NuxtLink to="/marques/teslamed" class="ob-link">TESLAMED — Technologie Esthétique</NuxtLink><NuxtLink to="/marques/joadams" class="ob-link">JO ADAMS — Parfumerie de Niche</NuxtLink></div></section>
 
-<section class="cta-section"><p v-reveal class="section-label">Intéressé par NIANCE ?</p><h2 v-reveal.d1 class="section-title" style="margin-bottom:24px;">Découvrez l'univers <em>NIANCE</em></h2><p v-reveal.d2 class="section-desc">Échangeons sur la manière dont NIANCE peut enrichir votre offre.</p><NuxtLink to="/contact" v-reveal.d3 class="btn-primary">Nous contacter</NuxtLink></section>
+<section class="cta-section"><p v-reveal class="section-label">Intéressé par NIANCE ?</p><h2 v-reveal.d1 class="section-title cta-title-spaced">Découvrez l'univers <em>NIANCE</em></h2><p v-reveal.d2 class="section-desc">Échangeons sur la manière dont NIANCE peut enrichir votre offre.</p><NuxtLink to="/contact" v-reveal.d3 class="btn-primary">Nous contacter</NuxtLink></section>
 </template>
 
 <style scoped>
-.page-hero { min-height: 65vh; padding: 160px 60px 80px; background: radial-gradient(ellipse 60% 60% at 70% 30%, rgba(200,169,81,0.05) 0%, transparent 70%), var(--black); display: flex; align-items: flex-end; position: relative; overflow: hidden; }
+/* Page-specific: hero watermark */
 .page-hero::before { content: 'N'; position: absolute; top: 50%; right: 8%; transform: translateY(-50%); font-family: var(--serif); font-size: 300px; font-weight: 300; color: rgba(200,169,81,0.03); }
-.page-hero-content { max-width: 1400px; width: 100%; margin: 0 auto; position: relative; z-index: 2; }
-.brand-intro { padding: 140px 60px; }
-.brand-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1400px; margin: 0 auto; align-items: center; }
+/* Page-specific: brand visual */
+.brand-visual { aspect-ratio: 1/1; background: radial-gradient(circle at 30% 40%, rgba(200,169,81,0.08) 0%, transparent 60%), var(--black-card); border: 1px solid rgba(200,169,81,0.1); }
 .brand-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
-.brand-visual { aspect-ratio: 1/1; background: radial-gradient(circle at 30% 40%, rgba(200,169,81,0.08) 0%, transparent 60%), var(--black-card); border: 1px solid rgba(200,169,81,0.1); display: flex; align-items: center; justify-content: center; }
-.brand-visual::after { display: none; }
-.pillars { padding: 140px 60px; background: var(--black-light); border-top: 1px solid rgba(200,169,81,0.06); }
-.pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1400px; margin: 60px auto 0; }
-.pillar { padding: 48px; background: var(--black-card); border: 1px solid rgba(200,169,81,0.08); transition: all 0.5s cubic-bezier(0.23,1,0.32,1); position: relative; overflow: hidden; }
-.pillar::before { content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--gold); transition: height 0.5s; }
-.pillar:hover { transform: translateY(-4px); border-color: rgba(200,169,81,0.2); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-.pillar:hover::before { height: 100%; }
-.pillar-icon { font-size: 24px; margin-bottom: 20px; color: var(--gold); }
-.pillar-title { font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
-.pillar-text { font-size: 15.5px; font-weight: 300; line-height: 1.8; color: var(--gray-light); }
-.science { padding: 140px 60px; }
-.science-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1400px; margin: 60px auto 0; }
-.science-card { padding: 48px; border: 1px solid rgba(200,169,81,0.1); background: var(--black-card); }
-.science-card-title { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-bottom: 8px; }
-.science-card-sub { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 600; }
-.science-card-text { font-size: 15.5px; font-weight: 300; line-height: 1.8; color: var(--gray-light); }
-.stats-strip { padding: 80px 60px; background: var(--black-light); border-top: 1px solid rgba(200,169,81,0.06); border-bottom: 1px solid rgba(200,169,81,0.06); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; text-align: center; }
-.collection { padding: 140px 60px; background: var(--black-light); border-top: 1px solid rgba(200,169,81,0.06); }
-.collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1200px; margin: 60px auto 0; }
-.coll-card { padding: 48px 32px; text-align: center; border: 1px solid rgba(200,169,81,0.08); transition: all 0.4s; }
-.coll-card:hover { border-color: rgba(200,169,81,0.2); background: rgba(200,169,81,0.02); }
-.coll-num { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--gold); margin-bottom: 12px; }
-.coll-title { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
-.coll-text { font-size: 14.5px; font-weight: 300; line-height: 1.8; color: var(--gray); }
-.other-brands { padding: 80px 60px; text-align: center; border-bottom: 1px solid rgba(200,169,81,0.06); }
-.ob-row { display: flex; justify-content: center; gap: 24px; margin-top: 32px; }
-.ob-link { padding: 16px 40px; border: 1px solid rgba(200,169,81,0.15); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; color: var(--gray-light); transition: all 0.3s; }
-.ob-link:hover { border-color: var(--gold); color: var(--gold); }
-@media (max-width: 1024px) { .brand-intro-grid, .science-grid { grid-template-columns: 1fr; gap: 48px; } .pillars-grid { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: repeat(2, 1fr); } .collection-grid { grid-template-columns: 1fr; } .page-hero, .brand-intro, .pillars, .science, .collection, .other-brands { padding: 80px 24px; } }
-@media (max-width: 768px) { .ob-row { flex-direction: column; align-items: center; } .page-hero { min-height: 45vh; padding: 120px 24px 48px; } }
 </style>

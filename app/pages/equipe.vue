@@ -4,20 +4,21 @@ useSeoMeta({
   ogTitle: "L'Équipe — DISTRISKIN",
   description: "Une équipe de commerciaux et de formateurs couvrant l'ensemble du territoire français, chacun apportant une expertise unique.",
   ogDescription: "Une équipe de commerciaux et de formateurs couvrant l'ensemble du territoire français, chacun apportant une expertise unique.",
+  ogImage: '/images/logo-distriskin.jpeg',
 })
 </script>
 
 <template>
 <div class="page-hero"><div class="page-hero-content">
   <p class="section-label">L'Équipe</p>
-  <h1 class="section-title" style="font-size:clamp(36px,6vw,64px);">Des experts passionnés<br>à <em>votre service</em></h1>
-  <p class="section-desc" style="color:var(--gray); margin-top:24px;">Une équipe de commerciaux et de formateurs couvrant l'ensemble du territoire français, chacun apportant une expertise unique.</p>
+  <h1 class="section-title hero-title-large">Des experts passionnés<br>à <em>votre service</em></h1>
+  <p class="section-desc hero-desc">Une équipe de commerciaux et de formateurs couvrant l'ensemble du territoire français, chacun apportant une expertise unique.</p>
 </div></div>
 
 <!-- MAXENCE -->
 <section class="featured">
   <div class="featured-grid">
-    <div class="featured-photo" v-reveal data-initials="MD"><NuxtImg src="/images/maxence-deloison.jpg" alt="Maxence Deloison" loading="lazy" /></div>
+    <div class="featured-photo" v-reveal data-initials="MD"><NuxtImg src="/images/maxence-deloison.jpg" alt="Maxence Deloison" loading="lazy" width="400" height="533" /></div>
 <div>
       <p class="section-label" v-reveal>Fondateur</p>
       <div class="featured-name" v-reveal.d1>Maxence Deloison</div>
@@ -31,9 +32,9 @@ useSeoMeta({
 </section>
 
 <!-- NOELIA -->
-<section class="featured" style="background: var(--black-light); border-top: 1px solid rgba(200,169,81,0.06); border-bottom: 1px solid rgba(200,169,81,0.06);">
-  <div class="featured-grid" style="direction: rtl;">
-    <div style="direction: ltr;">
+<section class="featured featured-alt">
+  <div class="featured-grid featured-grid-reversed">
+    <div>
       <p class="section-label" v-reveal>Experte</p>
       <div class="featured-name" v-reveal.d1>Noelia Ségadé</div>
       <div class="featured-role" v-reveal.d1>Spa Mentor — Conceptrice d'expériences signatures</div>
@@ -43,7 +44,7 @@ useSeoMeta({
       <p class="featured-bio" v-reveal.d3>Elle accompagne aussi les professionnels dans l'élévation de leurs standards et de leur expérience client.</p>
       <p class="featured-bio" v-reveal.d3>Aujourd'hui, elle propose du mentorat, des audits qualité et des évaluations mystère. Galicienne basée à Paris, elle intervient en France et à l'international.</p>
     </div>
-    <div class="featured-photo" v-reveal data-initials="NS" style="direction: ltr;"><NuxtImg src="/images/noelia-segade.jpg" alt="Noelia Ségadé" loading="lazy" /></div>
+    <div class="featured-photo" v-reveal data-initials="NS"><NuxtImg src="/images/noelia-segade.jpg" alt="Noelia Ségadé" loading="lazy" width="400" height="533" /></div>
   </div>
 </section>
 
@@ -109,7 +110,7 @@ useSeoMeta({
 
 <section class="cta-section">
   <p class="section-label" v-reveal>Rejoignez-nous</p>
-  <h2 class="section-title" v-reveal.d1 style="margin-bottom:24px;">Envie de <em>travailler ensemble</em> ?</h2>
+  <h2 class="section-title cta-title-spaced" v-reveal.d1>Envie de <em>travailler ensemble</em> ?</h2>
   <p class="section-desc" v-reveal.d2>Que vous soyez un professionnel du soin ou un commercial souhaitant rejoindre le réseau, contactez-nous.</p>
   <NuxtLink to="/contact" class="btn-primary" v-reveal.d3>Nous contacter</NuxtLink>
 </section>
@@ -119,9 +120,14 @@ useSeoMeta({
 .page-hero { min-height: 55vh; padding: 160px 60px 80px; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,169,81,0.04) 0%, transparent 70%), var(--black); display: flex; align-items: flex-end; position: relative; overflow: hidden; }
 .page-hero::before { content: ''; position: absolute; top: -40%; right: -15%; width: 60vw; height: 60vw; border-radius: 50%; border: 1px solid rgba(200,169,81,0.05); }
 .page-hero-content { max-width: 1400px; width: 100%; margin: 0 auto; position: relative; z-index: 2; }
+.hero-title-large { font-size: clamp(36px, 6vw, 64px); }
+.hero-desc { color: var(--gray); margin-top: 24px; }
+.cta-title-spaced { margin-bottom: 24px; }
 
 .featured { padding: 140px 60px; }
+.featured-alt { background: var(--black-light); border-top: 1px solid rgba(200,169,81,0.06); border-bottom: 1px solid rgba(200,169,81,0.06); }
 .featured-grid { display: grid; grid-template-columns: 0.8fr 1fr; gap: 80px; max-width: 1400px; margin: 0 auto; align-items: center; }
+.featured-grid-reversed { grid-template-columns: 1fr 0.8fr; }
 .featured-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .featured-photo {
   aspect-ratio: 3/4; background: radial-gradient(circle at 30% 40%, rgba(200,169,81,0.08) 0%, transparent 60%), var(--black-card);
