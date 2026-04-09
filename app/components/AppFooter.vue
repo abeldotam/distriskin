@@ -33,7 +33,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; {{ new Date().getFullYear() }} DISTRISKIN — Distribution Premium Beauté. Tous droits réservés.</p>
-      <p>Mentions légales · Confidentialité</p>
+      <p><NuxtLink to="/mentions-legales">Mentions légales</NuxtLink> · <NuxtLink to="/confidentialite">Confidentialité</NuxtLink></p>
     </div>
   </footer>
 </template>
