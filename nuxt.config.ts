@@ -42,6 +42,10 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
   },
 
+  experimental: {
+    payloadExtraction: false,
+  },
+
   nitro: {
     prerender: {
       routes: [
