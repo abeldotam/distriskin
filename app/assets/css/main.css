@@ -360,6 +360,7 @@ footer { padding: 80px 60px 40px; border-top: 1px solid rgba(200,169,81,0.1); }
 /* ══════ RESPONSIVE ══════ */
 @media (max-width: 1024px) {
   nav { padding: 16px 24px; }
+  .hero { padding-top: 70px; }
   .nav-links { display: none; }
   .nav-links.show {
     display: flex;
@@ -383,6 +384,7 @@ footer { padding: 80px 60px 40px; border-top: 1px solid rgba(200,169,81,0.1); }
   footer { padding: 48px 24px 24px; }
 }
 @media (max-width: 768px) {
+  .hero { padding-top: 80px; }
   .hero-title { font-size: 40px; }
   .hero-ctas { flex-direction: column; align-items: center; }
   .approach-grid { grid-template-columns: 1fr; }
