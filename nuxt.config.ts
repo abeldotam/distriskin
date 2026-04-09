@@ -1,0 +1,60 @@
+export default defineNuxtConfig({
+  compatibilityDate: '2025-05-15',
+  future: { compatibilityVersion: 4 },
+
+  app: {
+    head: {
+      htmlAttrs: { lang: 'fr' },
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    },
+  },
+
+  css: ['~/assets/css/main.css'],
+
+  modules: [
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxtjs/seo',
+  ],
+
+  ogImage: { enabled: false },
+
+  fonts: {
+    families: [
+      {
+        name: 'Cormorant Garamond',
+        provider: 'google',
+        weights: [300, 400, 500, 600, 700],
+        italic: true,
+      },
+      {
+        name: 'Manrope',
+        provider: 'google',
+        weights: [300, 400, 500, 600, 700],
+      },
+    ],
+  },
+
+  site: {
+    url: 'https://www.distriskin.com',
+    name: 'DISTRISKIN',
+    description: 'Distriskin, distributeur de marques premium pour les professionnels du soin et du bien-être : TESLAMED, NIANCE, JO ADAMS.',
+    defaultLocale: 'fr',
+  },
+
+  nitro: {
+    prerender: {
+      routes: [
+        '/',
+        '/approche',
+        '/equipe',
+        '/contact',
+        '/blog',
+        '/marques/teslamed',
+        '/marques/niance',
+        '/marques/joadams',
+      ],
+    },
+  },
+})
