@@ -66,7 +66,7 @@ useSeoMeta({
         <div><div class="stat-number">FR</div><div class="stat-label">Couverture nationale</div></div>
       </div>
     </div>
-    <div class="intro-visual reveal reveal-d2" v-reveal><NuxtImg src="/images/distriskin_logo_transparent.png" alt="DISTRISKIN" class="intro-visual-logo" loading="lazy" width="800" height="800" /></div>
+    <div class="intro-visual reveal reveal-d2" v-reveal><NuxtImg src="/images/logo-distriskin.jpeg" alt="DISTRISKIN" class="intro-visual-logo" loading="lazy" width="800" height="800" /></div>
   </div>
 </section>
 
