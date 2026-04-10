@@ -6,6 +6,34 @@ useSeoMeta({
   ogDescription: 'Vous êtes un professionnel du soin ou du bien-être et vous souhaitez proposer des produits d\'exception ? Échangeons.',
   ogImage: '/images/logo-distriskin.jpeg',
 })
+
+const submitting = ref(false)
+const submitted = ref(false)
+const error = ref(false)
+
+async function onSubmit(e) {
+  const form = e.target
+  submitting.value = true
+  error.value = false
+
+  try {
+    const res = await fetch('https://formspree.io/f/mdaprzrw', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    })
+    if (res.ok) {
+      submitted.value = true
+      form.reset()
+    } else {
+      error.value = true
+    }
+  } catch {
+    error.value = true
+  } finally {
+    submitting.value = false
+  }
+}
 </script>
 
 <template>
@@ -28,19 +56,28 @@ useSeoMeta({
   <div class="contact-form-wrap">
     <h3 v-reveal>Devenir partenaire</h3>
     <p class="subtitle" v-reveal.d1>Remplissez ce formulaire et nous vous recontactons sous 48h.</p>
-    <form>
-      <div class="fg-row">
-        <div class="fg" v-reveal><label>Nom *</label><input type="text" placeholder="Votre nom complet" required></div>
-        <div class="fg" v-reveal.d1><label>Établissement *</label><input type="text" placeholder="Nom de l'établissement" required></div>
+    <form @submit.prevent="onSubmit">
+      <div v-if="submitted" class="form-success" v-reveal>
+        <p class="success-title">Demande envoyée</p>
+        <p class="success-text">Merci pour votre intérêt. Nous vous recontactons sous 48h.</p>
       </div>
-      <div class="fg-row">
-        <div class="fg" v-reveal><label>Email *</label><input type="email" placeholder="votre@email.com" required></div>
-        <div class="fg" v-reveal.d1><label>Téléphone</label><input type="tel" placeholder="+33 ..."></div>
-      </div>
-      <div class="fg" v-reveal><label>Type d'établissement *</label><select required><option value="">Sélectionnez...</option><option>Spa d'hôtel 4* / 5* / Palace</option><option>Institut de beauté premium</option><option>Parfumerie sélective</option><option>Pharmacie / Centre médical</option><option>Concept store / Wellness</option><option>Autre</option></select></div>
-      <div class="fg" v-reveal><label>Marques qui vous intéressent</label><select><option value="">Sélectionnez...</option><option>TESLAMED — Technologie esthétique</option><option>NIANCE — Cosmétique suisse</option><option>JO ADAMS — Parfumerie de niche</option><option>Plusieurs marques / Synergie</option><option>Je souhaite en discuter</option></select></div>
-      <div class="fg" v-reveal><label>Votre projet</label><textarea placeholder="Décrivez vos besoins, vos objectifs..."></textarea></div>
-      <button type="submit" class="btn-primary btn-submit" v-reveal>Envoyer ma demande</button>
+      <template v-else>
+        <div class="fg-row">
+          <div class="fg" v-reveal><label>Nom *</label><input type="text" name="nom" placeholder="Votre nom complet" required></div>
+          <div class="fg" v-reveal.d1><label>Établissement *</label><input type="text" name="etablissement" placeholder="Nom de l'établissement" required></div>
+        </div>
+        <div class="fg-row">
+          <div class="fg" v-reveal><label>Email *</label><input type="email" name="email" placeholder="votre@email.com" required></div>
+          <div class="fg" v-reveal.d1><label>Téléphone</label><input type="tel" name="telephone" placeholder="+33 ..."></div>
+        </div>
+        <div class="fg" v-reveal><label>Type d'établissement *</label><select name="type_etablissement" required><option value="">Sélectionnez...</option><option>Spa d'hôtel 4* / 5* / Palace</option><option>Institut de beauté premium</option><option>Parfumerie sélective</option><option>Pharmacie / Centre médical</option><option>Concept store / Wellness</option><option>Autre</option></select></div>
+        <div class="fg" v-reveal><label>Marques qui vous intéressent</label><select name="marques"><option value="">Sélectionnez...</option><option>TESLAMED — Technologie esthétique</option><option>NIANCE — Cosmétique suisse</option><option>JO ADAMS — Parfumerie de niche</option><option>Plusieurs marques / Synergie</option><option>Je souhaite en discuter</option></select></div>
+        <div class="fg" v-reveal><label>Votre projet</label><textarea name="projet" placeholder="Décrivez vos besoins, vos objectifs..."></textarea></div>
+        <p v-if="error" class="form-error">Une erreur est survenue. Veuillez réessayer ou nous contacter par email.</p>
+        <button type="submit" class="btn-primary btn-submit" v-reveal :disabled="submitting">
+          {{ submitting ? 'Envoi en cours...' : 'Envoyer ma demande' }}
+        </button>
+      </template>
     </form>
   </div>
 </div>
@@ -76,6 +113,11 @@ useSeoMeta({
 .hero-desc { color: var(--gray); margin-top: 24px; }
 .contact-title-spaced { margin-bottom: 32px; }
 .btn-submit { width: 100%; border: none; cursor: pointer; }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.form-success { padding: 48px 32px; text-align: center; border: 1px solid rgba(200,169,81,0.2); }
+.success-title { font-family: var(--serif); font-size: 24px; font-weight: 300; margin-bottom: 12px; color: var(--gold); }
+.success-text { font-size: 14px; font-weight: 300; color: var(--gray); line-height: 1.6; }
+.form-error { font-size: 13px; color: #e74c3c; margin-bottom: 16px; }
 
 .contact-section { display: grid; grid-template-columns: 1fr 1.2fr; min-height: 600px; }
 .contact-info { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(200,169,81,0.06); }
