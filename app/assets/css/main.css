@@ -121,6 +121,45 @@ nav.scrolled { padding: 16px 60px; background: rgba(10,10,15,0.95); }
 .shop-strip-title { font-family: var(--serif); font-size: clamp(22px, 2.6vw, 30px); font-weight: 300; color: var(--white); line-height: 1.3; }
 .shop-strip-title em { font-style: italic; color: var(--gold); }
 
+/* ══════ ANSWER BLOCK (citable, AI-search optimized) ══════ */
+.answer-block {
+  max-width: 880px; margin: 0 auto; padding: 100px 60px 40px;
+}
+.answer-block-q {
+  font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); font-weight: 400;
+  color: var(--gold); margin-bottom: 24px; line-height: 1.3;
+}
+.answer-block-q em { font-style: italic; }
+.answer-block-text {
+  font-size: 16px; font-weight: 300; line-height: 1.85; color: var(--gray-light);
+}
+.answer-block-text strong { color: var(--white); font-weight: 500; }
+
+/* ══════ FAQ SECTION ══════ */
+.faq-section { padding: 120px 60px; background: var(--black-light); border-top: 1px solid rgba(200,169,81,0.06); }
+.faq-section .section-header { text-align: center; max-width: 900px; margin: 0 auto 48px; }
+.faq-list { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  border: 1px solid rgba(200,169,81,0.1); background: var(--black-card);
+  transition: border-color 0.3s;
+}
+.faq-item[open] { border-color: rgba(200,169,81,0.3); }
+.faq-item summary {
+  list-style: none; cursor: pointer; padding: 22px 28px;
+  font-size: 16px; font-weight: 500; color: var(--white);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; font-family: var(--serif); font-size: 28px; font-weight: 300;
+  color: var(--gold); flex-shrink: 0; line-height: 1; transition: transform 0.3s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-answer {
+  padding: 0 28px 24px; font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--gray-light);
+}
+.faq-answer p + p { margin-top: 12px; }
+
 /* ══════ SECTION GLOBALS ══════ */
 .section-label {
   font-size: 10px; font-weight: 600; letter-spacing: 5px;
@@ -414,4 +453,6 @@ footer { padding: 80px 60px 40px; border-top: 1px solid rgba(200,169,81,0.1); }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   .shop-strip { padding: 36px 24px; }
   .shop-strip-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .answer-block { padding: 60px 24px 24px; }
+  .faq-section { padding: 80px 24px; }
 }

@@ -6,6 +6,27 @@ useSeoMeta({
   ogDescription: 'Découvrez JO ADAMS, extraits de parfums de niche distribués par Distriskin. Parfumerie haut de gamme pour points de vente premium.',
   ogImage: '/images/logo-distriskin.jpeg',
 })
+
+const faq = [
+  { q: "Qu'est-ce que JO ADAMS ?", a: "JO ADAMS est une maison de parfumerie de niche fondée par Mahmoud Khairy, nez et fils de cultivateurs de jasmin en Égypte. Les parfums sont des extraits hautement concentrés (30 à 40 % d'essences), élaborés en Allemagne avec un savoir-faire artisanal et des matières premières sélectionnées en Égypte et dans le monde." },
+  { q: "Qu'est-ce qu'un extrait de parfum à 30-40 % de concentration ?", a: "Il s'agit du plus haut niveau de concentration en parfumerie. Là où les eaux de toilette se situent autour de 5-15 % et les eaux de parfum autour de 15-20 %, les extraits JO ADAMS atteignent 30 à 40 %. Cela signifie une signature olfactive plus puissante, plus tenace et plus fidèle aux matières premières utilisées." },
+  { q: 'JO ADAMS est-il vendu en parfumerie en France ?', a: 'JO ADAMS est distribué en France via Distriskin, qui propose la marque aux parfumeries sélectives, hôtels de luxe, instituts de beauté premium et points de vente exclusifs. La distribution est volontairement restreinte pour préserver la rareté de la maison.' },
+  { q: 'JO ADAMS est-il en exclusivité territoriale ?', a: "Oui. Distriskin dispose de l'exclusivité territoriale pour la France, ce qui permet aux points de vente partenaires de proposer une marque que leurs clients ne trouveront pas ailleurs." },
+  { q: 'Combien de créations compte JO ADAMS ?', a: 'JO ADAMS référence 22 créations exclusives. La maison affiche une note moyenne de 8,8 sur Parfumo (communauté internationale de parfumerie).' },
+]
+
+useSchemaOrg([
+  {
+    '@type': 'Brand',
+    name: 'JO ADAMS',
+    description: "Maison de parfumerie de niche germano-égyptienne. Extraits de parfums concentrés à 30-40 % d'essences.",
+    countryOfOrigin: 'DE',
+  },
+  {
+    '@type': 'FAQPage',
+    mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+  },
+])
 </script>
 
 <template>
@@ -14,6 +35,14 @@ useSeoMeta({
   <h1 class="section-title hero-title-large">JO ADAMS<br><em>Bien plus qu'un parfum : une signature</em></h1>
   <p class="section-desc hero-desc">Une parfumerie de caractère, dédiée à celles et ceux qui recherchent l'exclusivité. Extraits de parfums d'exception, concentrations rares de 30 à 40% d'essences.</p>
 </div></div>
+
+<!-- ANSWER BLOCK (AI-search citable) -->
+<section class="answer-block" aria-labelledby="qa-joadams">
+  <h2 id="qa-joadams" class="answer-block-q">Qu'est-ce que JO ADAMS ?</h2>
+  <p class="answer-block-text">
+    <strong>JO ADAMS</strong> est une maison de parfumerie de niche germano-égyptienne distribuée en France par Distriskin. Fondée par <strong>Mahmoud Khairy</strong>, nez et fils de cultivateurs de jasmin en Égypte, la marque conjugue richesse olfactive orientale et précision européenne. Les fragrances sont élaborées en Allemagne selon un savoir-faire artisanal d'exception, à partir d'ingrédients sélectionnés en Égypte et dans les plus belles régions du monde. Particularité unique de la maison&nbsp;: ce sont de véritables <strong>extraits de parfum à 30-40&nbsp;% de concentration</strong> en essences — le plus haut niveau de la parfumerie, contre 5-15&nbsp;% pour une eau de toilette et 15-20&nbsp;% pour une eau de parfum. La maison référence 22 créations et affiche une note moyenne de 8,8 sur Parfumo. Distriskin assure la distribution sélective avec <strong>exclusivité territoriale France</strong>, réservée aux parfumeries sélectives, hôtels de luxe et points de vente premium.
+  </p>
+</section>
 
 <section class="brand-intro"><div class="brand-intro-grid">
   <div>
@@ -52,6 +81,20 @@ useSeoMeta({
     <div v-reveal class="coll-card"><div class="coll-num">01</div><div class="coll-title">Exclusivité</div><p class="coll-text">Exclusivité territoriale France. Vos clients découvrent chez vous une maison qu'ils ne trouveront nulle part ailleurs.</p></div>
     <div v-reveal.d1 class="coll-card"><div class="coll-num">02</div><div class="coll-title">Marge Attractive</div><p class="coll-text">Un positionnement prix élevé avec des marges confortables. Les extraits de niche génèrent un CA significatif par mètre linéaire.</p></div>
     <div v-reveal.d2 class="coll-card"><div class="coll-num">03</div><div class="coll-title">Fidélisation</div><p class="coll-text">Les amateurs de parfumerie de niche sont des clients fidèles qui reviennent explorer de nouvelles créations. Un cercle vertueux.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-header">
+    <p class="section-label" v-reveal>Questions fréquentes</p>
+    <h2 class="section-title" v-reveal.d1>Tout savoir sur <em>JO ADAMS</em></h2>
+  </div>
+  <div class="faq-list">
+    <details v-for="(item, i) in faq" :key="i" class="faq-item" v-reveal>
+      <summary>{{ item.q }}</summary>
+      <div class="faq-answer"><p>{{ item.a }}</p></div>
+    </details>
   </div>
 </section>
 

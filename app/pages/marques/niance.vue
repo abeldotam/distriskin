@@ -6,6 +6,33 @@ useSeoMeta({
   ogDescription: 'Découvrez NIANCE, marque suisse holistique de cosmétiques très haut de gamme et compléments alimentaires. Technologie Epigen12, anti-âge premium.',
   ogImage: '/images/logo-distriskin.jpeg',
 })
+
+const faq = [
+  { q: "Qu'est-ce que NIANCE ?", a: "NIANCE est une marque suisse haut de gamme spécialisée dans la cosmétique holistique et les compléments alimentaires de longévité. Elle est 100% développée et fabriquée en Suisse, présente dans plus de 30 pays, et combine soins dermocosmétiques performants et compléments ciblant l'énergie cellulaire (NAD+), les télomères et le stress oxydatif." },
+  { q: "Qu'est-ce que la technologie FERNESSE™ ?", a: "FERNESSE™ est une biotechnologie propriétaire de NIANCE qui optimise le poids moléculaire et la biodisponibilité des actifs clés (vitamine C, rétinol, peptides) via activation enzymatique. Elle permet une meilleure pénétration cutanée et des résultats visibles plus rapidement." },
+  { q: "Qu'est-ce que le Swiss Glacier Complex® ?", a: "Le Swiss Glacier Complex® associe l'eau pure des glaciers alpins, des vitamines biodisponibles, des minéraux et des extraits de plantes d'altitude (Edelweiss). Il soutient le renouvellement cellulaire, la protection antioxydante et la fermeté cutanée." },
+  { q: 'Qui distribue NIANCE en France ?', a: 'Distriskin distribue NIANCE en France auprès des spas, instituts, parfumeries sélectives et centres de médecine préventive. La distribution inclut formation cabine, conseil retail et soutien marketing.' },
+  { q: 'NIANCE peut-il se combiner avec TeslaMed ?', a: "Oui. La combinaison NIANCE + TeslaMed est une signature de Distriskin : la biotechnologie FERNESSE™ associée à l'Ion Stream 680 Pro renforce significativement l'efficacité des protocoles cabine." },
+  { q: 'Qui conçoit les protocoles signature NIANCE ?', a: "Les protocoles signature sont conçus par Noélia Ségadé, experte protocoles NIANCE chez Distriskin. Ces protocoles transforment les soins cabine en moments d'exception et structurent l'offre des établissements partenaires." },
+]
+
+useSchemaOrg([
+  {
+    '@type': 'Brand',
+    name: 'NIANCE',
+    description: 'Marque suisse haut de gamme de cosmétiques holistiques et compléments alimentaires de longévité.',
+    countryOfOrigin: 'CH',
+  },
+  definePerson({
+    name: 'Noélia Ségadé',
+    jobTitle: 'Experte protocoles NIANCE',
+    worksFor: { '@type': 'Organization', name: 'DISTRISKIN', url: 'https://distriskin.com' },
+  }),
+  {
+    '@type': 'FAQPage',
+    mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+  },
+])
 </script>
 
 <template>
@@ -14,6 +41,14 @@ useSeoMeta({
   <h1 class="section-title hero-title-large">NIANCE<br><em>L'excellence suisse au service de la beauté et de la longévité</em></h1>
   <p class="section-desc hero-desc">Soins dermocosmétiques de haute performance et compléments alimentaires innovants, formulés pour agir au cœur des mécanismes biologiques du vieillissement.</p>
 </div></div>
+
+<!-- ANSWER BLOCK (AI-search citable) -->
+<section class="answer-block" aria-labelledby="qa-niance">
+  <h2 id="qa-niance" class="answer-block-q">Qu'est-ce que NIANCE et comment fonctionne sa science ?</h2>
+  <p class="answer-block-text">
+    <strong>NIANCE</strong> est une marque suisse haut de gamme dédiée à la cosmétique holistique et à la longévité, distribuée en France par Distriskin. Elle est 100&nbsp;% développée et fabriquée en Suisse et présente dans plus de 30 pays. Sa science repose sur deux piliers&nbsp;: le <strong>Swiss Glacier Complex®</strong>, qui associe eau pure des glaciers alpins, vitamines biodisponibles, minéraux essentiels et extraits de plantes d'altitude comme l'Edelweiss pour soutenir renouvellement cellulaire, protection antioxydante et fermeté ; et la biotechnologie <strong>FERNESSE™</strong>, qui optimise le poids moléculaire et la biodisponibilité des actifs (vitamine C, rétinol, peptides) via activation enzymatique pour une pénétration plus rapide. Au-delà des soins cabine et retail, la collection EPIGEN cible l'énergie cellulaire (NAD+), la protection des télomères et le stress oxydatif. Les protocoles signature sont conçus par Noélia Ségadé pour les établissements partenaires.
+  </p>
+</section>
 
 <section class="brand-intro"><div class="brand-intro-grid">
   <div>
@@ -67,6 +102,20 @@ useSeoMeta({
     <div v-reveal class="coll-card"><div class="coll-num">01</div><div class="coll-title">Image Premium</div><p class="coll-text">Un positionnement Swiss Made qui renforce la crédibilité de votre établissement auprès d'une clientèle exigeante.</p></div>
     <div v-reveal.d1 class="coll-card"><div class="coll-num">02</div><div class="coll-title">Triple Revenue</div><p class="coll-text">Soins cabine + vente retail + compléments alimentaires : trois sources de revenus complémentaires à forte marge.</p></div>
     <div v-reveal.d2 class="coll-card"><div class="coll-num">03</div><div class="coll-title">Formation Experte</div><p class="coll-text">Formations sur mesure incluant maîtrise du soin cabine, conseil client et techniques de vente.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-header">
+    <p class="section-label" v-reveal>Questions fréquentes</p>
+    <h2 class="section-title" v-reveal.d1>Tout savoir sur <em>NIANCE</em></h2>
+  </div>
+  <div class="faq-list">
+    <details v-for="(item, i) in faq" :key="i" class="faq-item" v-reveal>
+      <summary>{{ item.q }}</summary>
+      <div class="faq-answer"><p>{{ item.a }}</p></div>
+    </details>
   </div>
 </section>
 

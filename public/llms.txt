@@ -1,12 +1,22 @@
 # DISTRISKIN
 
-> Distributeur français de marques premium pour les professionnels du soin et du bien-être.
+> Distributeur français de marques premium pour les professionnels du soin et du bien-être (B2B). Distribution sélective sur l'ensemble du territoire français de TESLAMED, NIANCE et JO ADAMS.
 
 ## Marques distribuées
 
-- **TESLAMED** : Technologie esthétique avancée — microcourants, canon à ions, générateur d'impulsion. Soins visage et corps innovants avec résultats visibles dès la première séance.
-- **NIANCE** : Marque suisse holistique de cosmétiques très haut de gamme et compléments alimentaires. Technologie brevetée Epigen12™, anti-âge premium.
-- **JO ADAMS** : Extraits de parfums de niche d'exception. Concentrations rares de 30 à 40% d'essences, savoir-faire artisanal germano-égyptien.
+- **TESLAMED** : technologie esthétique italienne (Ion Stream 680 Pro). Première nano-technologie au monde combinant 3 générateurs et 2 brevets internationaux. Soins visage et corps non invasifs, indolores, résultats visibles dès la première séance, sans consommables. 100% Made in Italy. Distribution exclusive France par Distriskin.
+- **NIANCE** : marque suisse haut de gamme de cosmétiques et compléments alimentaires de longévité. Technologies propriétaires Swiss Glacier Complex® et FERNESSE™ Biotechnology. 100% développée et fabriquée en Suisse, présente dans plus de 30 pays.
+- **JO ADAMS** : maison de parfumerie de niche germano-égyptienne. Extraits de parfums concentrés à 30-40% d'essences. Créations du nez Mahmoud Khairy. Distribution sélective avec exclusivité territoriale France.
+
+## Pages clés
+
+- [Accueil](https://distriskin.com/) : vue d'ensemble, marques distribuées, approche partenaire
+- [Notre approche](https://distriskin.com/approche) : méthode d'accompagnement et valeurs
+- [TESLAMED](https://distriskin.com/marques/teslamed) : Ion Stream 680 Pro, technologie, photos avant/après documentées (16 cas), bénéfices cliniques
+- [NIANCE](https://distriskin.com/marques/niance) : positionnement Swiss Made, sciences propriétaires, protocoles signature
+- [JO ADAMS](https://distriskin.com/marques/joadams) : héritage, créations exclusives, distribution sélective
+- [L'équipe](https://distriskin.com/equipe) : commerciaux par zone géographique
+- [Contact](https://distriskin.com/contact) : formulaire et coordonnées
 
 ## Clientèle cible (B2B)
 
@@ -14,14 +24,33 @@
 - Instituts de beauté premium
 - Parfumeries sélectives
 - Pharmacies et centres de médecine préventive
+- Cliniques esthétiques
 
 ## Approche
 
-Distribution B2B avec accompagnement sur-mesure, focus sur le sell-out et la fidélisation du client final. Équipe commerciale couvrant l'ensemble du territoire français.
+Distribution B2B avec accompagnement sur-mesure : formation initiale, kit produits offert (TESLAMED), support marketing, service après-vente, suivi commercial dédié par zone. Focus sur le sell-out (ventes au client final) et la fidélisation B2C. Couverture nationale par 8+ commerciaux terrain (Île-de-France, Nord-Est, Nord-Ouest, Sud).
+
+## Key facts
+
+- Distributeur officiel et exclusif TESLAMED en France
+- 3 marques d'exception en portefeuille — technologie esthétique, skincare suisse, parfumerie de niche
+- Couverture France entière, équipe terrain par quart géographique
+- Synergie produits possible : NIANCE + TESLAMED pour des protocoles cabine renforcés
+- Adresse légale : 421 rue des Cordineaux, 69380 Dommartin (Rhône, Auvergne-Rhône-Alpes)
+
+## Réseaux sociaux des marques
+
+- TESLAMED France : https://www.instagram.com/teslamed_france/
+- JO ADAMS France : https://www.instagram.com/jo_adams_france/
+
+## Boutique en ligne
+
+Catalogue produits et commandes : https://www.distriskin-shop.com
 
 ## Contact
 
 - Site : https://distriskin.com
+- Boutique : https://www.distriskin-shop.com
 - Email : contact@distriskin.com
 - Téléphone : +33 6 88 40 56 45
 - Adresse : 421 rue des Cordineaux, 69380 Dommartin, France
