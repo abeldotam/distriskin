@@ -4,603 +4,457 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — DISTRISKIN</title>
-<meta name="description" content="Contactez Distriskin pour devenir partenaire et proposer des marques premium à votre clientèle.">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════════════════
-   DISTRISKIN — Global Stylesheet
-   Brand Charter: Navy #10133F · Gold #AD822B · Gray #404040
-   Typography: Montserrat (display) · Cormorant Garamond (serif)
-   ═══════════════════════════════════════════════════════════ */
 
-/* ── VARIABLES ── */
+/* ══════ V3 DESIGN SYSTEM ══════ */
 :root {
-  --navy: #10133F;
-  --navy-light: #1a1d5c;
-  --gold: #AD822B;
-  --gold-light: #c9a455;
-  --gold-pale: #e8d5c0;
-  --gold-bg: #f7f0e5;
-  --gray: #404040;
-  --gray-light: #8a8a8a;
-  --gray-border: #e2e0dc;
-  --cream: #faf8f5;
-  --white: #ffffff;
-  --font-display: 'Montserrat', sans-serif;
-  --font-serif: 'Cormorant Garamond', serif;
-  --max-width: 1240px;
-  --transition: cubic-bezier(0.4, 0, 0.2, 1);
+  --gold: #C8A951;
+  --gold-light: #D4BC72;
+  --gold-dark: #A88B3A;
+  --black: #0A0A0F;
+  --black-light: #111118;
+  --black-card: #16161F;
+  --white: #FAFAF8;
+  --gray: #888890;
+  --gray-light: #B0B0B8;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Manrope', system-ui, sans-serif;
 }
-
-/* ── RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: var(--font-display);
-  color: var(--gray);
-  background: var(--white);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-img { max-width: 100%; display: block; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--black); color: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--gold); color: var(--black); }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
+img { max-width: 100%; display: block; }
 
-/* ── UTILITIES ── */
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 4rem; }
-.text-center { text-align: center; }
-
-.section-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.2rem;
-  font-weight: 500;
-  display: block;
-}
-
-.section-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 300;
-  color: var(--navy);
-  line-height: 1.25;
-  margin-bottom: 1.5rem;
-}
-.section-title em {
-  font-style: italic;
-  color: var(--gold);
-}
-
-.section-desc {
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.9;
-  color: var(--gray-light);
-  max-width: 600px;
-}
-
-.gold-line {
-  width: 50px;
-  height: 1px;
-  background: var(--gold);
-  margin: 1.5rem 0;
-}
-.gold-line-center { margin: 1.5rem auto; }
-
-/* ── BUTTONS ── */
-.btn-primary {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--white);
-  border: none;
-  padding: 1rem 2.5rem;
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.4s var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-  transition: left 0.6s;
-}
-.btn-primary:hover::before { left: 100%; }
-.btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(173, 130, 43, 0.3);
-}
-
-.btn-outline {
-  display: inline-block;
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 1rem 2.5rem;
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.4s;
-}
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-.btn-outline-dark {
-  display: inline-block;
-  border: 1px solid var(--navy);
-  color: var(--navy);
-  padding: 1rem 2.5rem;
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.4s;
-}
-.btn-outline-dark:hover { background: var(--navy); color: var(--white); }
-
-/* ═══════════════════════════════════════════
-   NAVIGATION
-   ═══════════════════════════════════════════ */
+/* ══════ NAV ══════ */
 nav {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 1.5rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.5s var(--transition);
-}
-
-nav.nav-dark { /* for pages with light hero backgrounds */ }
-
-nav.scrolled {
-  background: rgba(16, 19, 63, 0.97);
-  padding: 1rem 4rem;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 60px;
+  background: rgba(10,10,15,0.85);
   backdrop-filter: blur(20px);
-  box-shadow: 0 2px 40px rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(200,169,81,0.08);
+  transition: all 0.4s;
 }
+nav.scrolled { padding: 16px 60px; background: rgba(10,10,15,0.95); }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 300;
-  letter-spacing: 0.5em;
-  color: var(--white);
+  font-family: var(--serif); font-size: 28px; font-weight: 300;
+  letter-spacing: 8px; color: var(--gold); text-decoration: none;
 }
+.nav-logo span { font-weight: 600; }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
+.nav-links { display: flex; gap: 40px; align-items: center; }
 .nav-links a {
-  color: rgba(255,255,255,0.8);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition: color 0.3s;
-  position: relative;
+  font-size: 11px; font-weight: 500; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gray-light);
+  text-decoration: none; transition: color 0.3s; position: relative;
 }
 .nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 1px;
-  background: var(--gold);
-  transition: width 0.4s var(--transition);
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--gold); transition: width 0.3s;
 }
-.nav-links a:hover { color: var(--gold-light); }
+.nav-links a:hover { color: var(--gold); }
 .nav-links a:hover::after { width: 100%; }
 .nav-links a.active { color: var(--gold); }
 .nav-links a.active::after { width: 100%; }
 
-/* Brand sub-links */
-.nav-dropdown {
-  position: relative;
-}
+.nav-dropdown { position: relative; }
 .nav-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: -1rem;
-  background: rgba(16, 19, 63, 0.97);
-  backdrop-filter: blur(20px);
-  padding: 1rem 0;
-  min-width: 200px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: all 0.3s var(--transition);
-  border-top: 2px solid var(--gold);
-  margin-top: 1rem;
+  position: absolute; top: 100%; left: -16px;
+  background: rgba(10,10,15,0.97); backdrop-filter: blur(20px);
+  padding: 12px 0; min-width: 200px;
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: all 0.3s; border-top: 2px solid var(--gold); margin-top: 12px;
 }
-.nav-dropdown:hover .nav-dropdown-menu {
-  opacity: 1; visibility: visible; transform: translateY(0);
-}
-.nav-dropdown-menu a {
-  display: block;
-  padding: 0.6rem 1.5rem;
-  font-size: 0.65rem !important;
-  letter-spacing: 0.12em !important;
-  white-space: nowrap;
-}
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown-menu a { display: block; padding: 8px 20px; font-size: 11px !important; white-space: nowrap; }
 .nav-dropdown-menu a::after { display: none !important; }
-.nav-dropdown-menu a:hover { background: rgba(173, 130, 43, 0.1); }
+.nav-dropdown-menu a:hover { background: rgba(200,169,81,0.08); }
 
 .nav-cta {
-  border: 1px solid var(--gold) !important;
-  padding: 0.55rem 1.6rem !important;
-  color: var(--gold) !important;
-  transition: all 0.3s !important;
+  padding: 10px 28px !important; border: 1px solid var(--gold) !important;
+  color: var(--gold) !important; font-size: 10px !important;
+  letter-spacing: 3px !important; transition: all 0.3s !important;
 }
 .nav-cta::after { display: none !important; }
-.nav-cta:hover { background: var(--gold) !important; color: var(--white) !important; }
+.nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
 
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 1001;
-}
-.menu-toggle span {
-  width: 24px; height: 1.5px;
-  background: white;
-  transition: 0.3s;
-}
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 101; }
+.menu-toggle span { width: 24px; height: 1.5px; background: var(--white); }
 
-/* Mobile nav */
-@media (max-width: 900px) {
-  .nav-links { display: none; }
-  .nav-links.show {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100vh;
-    background: var(--navy);
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    z-index: 999;
-  }
-  .nav-links.show a { font-size: 1rem; }
-  .menu-toggle { display: flex; }
-  .nav-dropdown-menu {
-    position: static;
-    opacity: 1; visibility: visible;
-    transform: none;
-    background: transparent;
-    border: none;
-    margin: 0; padding: 0.5rem 0;
-  }
+/* ══════ BUTTONS ══════ */
+.btn-primary {
+  display: inline-block; padding: 16px 48px;
+  background: var(--gold); color: var(--black);
+  font-family: var(--sans); font-size: 11px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase;
+  text-decoration: none; border: none; cursor: pointer; transition: all 0.4s;
+}
+.btn-primary:hover {
+  background: var(--gold-light); transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(200,169,81,0.2);
 }
 
-/* ═══════════════════════════════════════════
-   PAGE HERO (reusable across pages)
-   ═══════════════════════════════════════════ */
-.page-hero {
-  min-height: 55vh;
-  background: var(--navy);
-  display: flex;
-  align-items: flex-end;
-  padding: 6rem 4rem 4rem;
-  position: relative;
-  overflow: hidden;
+.btn-secondary {
+  display: inline-block; padding: 16px 48px;
+  background: transparent; color: var(--white);
+  font-family: var(--sans); font-size: 11px; font-weight: 500;
+  letter-spacing: 3px; text-transform: uppercase;
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer; transition: all 0.4s;
 }
-.page-hero::before {
-  content: '';
-  position: absolute;
-  top: -40%; right: -15%;
-  width: 60vw; height: 60vw;
-  border-radius: 50%;
-  border: 1px solid rgba(173, 130, 43, 0.06);
-}
-.page-hero-content {
-  position: relative; z-index: 2;
-  max-width: var(--max-width);
-  width: 100%;
-  margin: 0 auto;
-}
-.page-hero .section-label { color: var(--gold); }
-.page-hero .section-title { color: var(--white); font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1rem; }
-.page-hero .section-desc { color: rgba(255,255,255,0.5); }
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
-/* ═══════════════════════════════════════════
-   CTA BANNER (reusable)
-   ═══════════════════════════════════════════ */
-.cta-banner {
-  background: var(--navy);
-  padding: 6rem 4rem;
+/* ══════ SECTION GLOBALS ══════ */
+.section-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+}
+.section-title {
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 56px);
+  font-weight: 300; line-height: 1.15;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-desc {
+  font-size: 15px; font-weight: 300; line-height: 1.9;
+  color: var(--gray-light); max-width: 580px;
+}
+.gold-line { width: 40px; height: 1px; background: var(--gold); margin: 20px 0; }
+.gold-line-center { margin: 20px auto; }
+.text-center { text-align: center; }
+
+/* ══════ HERO (V3 EXACT) ══════ */
+.hero {
+  position: relative; height: 100vh; display: flex;
+  align-items: center; justify-content: center; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,169,81,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(200,169,81,0.04) 0%, transparent 60%),
+    var(--black);
+}
+.hero-grain {
+  position: absolute; inset: 0; opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+.hero-line {
+  position: absolute; width: 1px; height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: 0.3; animation: floatLine 8s ease-in-out infinite;
+}
+.hero-line:nth-child(1) { left: 15%; top: 20%; }
+.hero-line:nth-child(2) { left: 85%; top: 30%; animation-delay: 2s; height: 80px; }
+.hero-line:nth-child(3) { left: 50%; top: 70%; animation-delay: 4s; height: 60px; }
+.hero-line:nth-child(4) { left: 30%; top: 60%; animation-delay: 6s; height: 100px; }
+@keyframes floatLine {
+  0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.2; }
+  50% { transform: translateY(-30px) scaleY(1.3); opacity: 0.5; }
+}
+.hero-content { position: relative; text-align: center; max-width: 900px; padding: 0 40px; }
+.hero-badge {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  letter-spacing: 5px; text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(200,169,81,0.3); padding: 8px 24px;
+  margin-bottom: 48px; animation: fadeUp 1s ease 0.2s both;
+}
+.hero-title {
+  font-family: var(--serif); font-size: clamp(48px, 8vw, 96px);
+  font-weight: 300; line-height: 1.05; letter-spacing: -1px;
+  margin-bottom: 32px; animation: fadeUp 1s ease 0.4s both;
+}
+.hero-title em { font-style: italic; color: var(--gold); font-weight: 400; }
+.hero-sub {
+  font-size: 16px; font-weight: 300; color: var(--gray); line-height: 1.8;
+  max-width: 560px; margin: 0 auto 48px; animation: fadeUp 1s ease 0.6s both;
+}
+.hero-ctas { display: flex; gap: 20px; justify-content: center; animation: fadeUp 1s ease 0.8s both; }
+.hero-scroll {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: fadeUp 1s ease 1.2s both;
+}
+.hero-scroll span { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); }
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.2); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ══════ MARQUEE (V3 EXACT) ══════ */
+.marquee-section {
+  border-top: 1px solid rgba(200,169,81,0.1);
+  border-bottom: 1px solid rgba(200,169,81,0.1);
+  padding: 20px 0; overflow: hidden;
+}
+.marquee-track { display: flex; gap: 60px; animation: marqueeScroll 20s linear infinite; width: max-content; }
+.marquee-item {
+  font-family: var(--serif); font-size: 14px; letter-spacing: 6px;
+  text-transform: uppercase; color: var(--gray); white-space: nowrap;
+  display: flex; align-items: center; gap: 60px;
+}
+.marquee-item::after { content: '◆'; font-size: 6px; color: var(--gold); }
+@keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ══════ INTRO SECTION ══════ */
+.intro-section { padding: 140px 60px; }
+.intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  max-width: 1400px; margin: 0 auto; align-items: center;
+}
+.intro-visual {
+  position: relative; aspect-ratio: 4/5;
+  background: radial-gradient(circle at 30% 40%, rgba(200,169,81,0.08) 0%, transparent 60%), var(--black-card);
+  border: 1px solid rgba(200,169,81,0.1);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.intro-visual::after {
+  content: 'DS'; font-family: var(--serif); font-size: 80px; font-weight: 300;
+  color: rgba(200,169,81,0.08); letter-spacing: 16px;
+}
+.intro-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px;
+}
+.stat-number {
+  font-family: var(--serif); font-size: 48px; font-weight: 300;
+  color: var(--gold); line-height: 1; margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 11px; font-weight: 500; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gray);
+}
+
+/* ══════ BRANDS OVERVIEW ══════ */
+.brands-section { padding: 140px 60px; }
+.section-header { text-align: center; margin-bottom: 80px; }
+.brands-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  max-width: 1400px; margin: 0 auto;
+}
+.brand-card {
+  position: relative; background: var(--black-card);
+  border: 1px solid rgba(200,169,81,0.08);
+  padding: 60px 40px 50px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); overflow: hidden;
+}
+.brand-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity 0.5s;
+}
+.brand-card:hover { transform: translateY(-8px); border-color: rgba(200,169,81,0.2); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+.brand-card:hover::before { opacity: 1; }
+.brand-origin {
+  font-size: 9px; font-weight: 600; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+}
+.brand-name {
+  font-family: var(--serif); font-size: 36px; font-weight: 400;
+  margin-bottom: 8px; letter-spacing: 2px;
+}
+.brand-tagline {
+  font-size: 13px; font-weight: 300; color: var(--gray);
+  font-style: italic; margin-bottom: 32px; line-height: 1.6;
+}
+.brand-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 28px; transition: width 0.5s; }
+.brand-card:hover .brand-divider { width: 80px; }
+.brand-desc { font-size: 14px; line-height: 1.8; color: var(--gray-light); margin-bottom: 32px; }
+.brand-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); text-decoration: none; transition: gap 0.3s;
+}
+.brand-link:hover { gap: 14px; }
+
+/* ══════ APPROACH HIGHLIGHTS ══════ */
+.approach-section {
+  padding: 140px 60px;
+  background: var(--black-light);
+  border-top: 1px solid rgba(200,169,81,0.06);
+  border-bottom: 1px solid rgba(200,169,81,0.06);
+}
+.approach-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  max-width: 1400px; margin: 60px auto 0;
+}
+.approach-card {
+  padding: 48px 32px; border-right: 1px solid rgba(200,169,81,0.06);
+  transition: all 0.4s; cursor: default;
+}
+.approach-card:last-child { border-right: none; }
+.approach-card:hover { background: rgba(200,169,81,0.02); }
+.approach-num {
+  font-family: var(--serif); font-size: 48px; font-weight: 300;
+  color: var(--gold); margin-bottom: 24px; line-height: 1;
+}
+.approach-title {
+  font-size: 12px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.approach-text { font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--gray); }
+
+/* ══════ CLIENTS ══════ */
+.clients-section {
+  padding: 100px 60px;
+  border-bottom: 1px solid rgba(200,169,81,0.06);
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
-.cta-banner::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px; height: 500px;
-  border: 1px solid rgba(173, 130, 43, 0.05);
-  border-radius: 50%;
-}
-.cta-banner .section-title { color: var(--white); max-width: 700px; margin: 0 auto 1rem; }
-.cta-banner .section-desc { color: rgba(255,255,255,0.45); margin: 0 auto 2.5rem; text-align: center; }
-
-/* ═══════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════ */
-footer {
-  background: var(--navy);
-  color: rgba(255,255,255,0.4);
-  padding: 0;
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 3rem;
-  padding: 5rem 4rem 3rem;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.footer-brand {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 0.4em;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-}
-
-.footer-tagline {
-  font-size: 0.85rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.35);
-  max-width: 280px;
-}
-
-.footer-col-title {
-  font-size: 0.6rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.2rem;
-  font-weight: 500;
-}
-
-.footer-links a {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 0.7rem;
-  transition: color 0.3s;
-}
-.footer-links a:hover { color: var(--gold-light); }
-
-.footer-bottom {
-  padding: 2rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  font-size: 0.7rem;
-  font-weight: 300;
-}
-.footer-bottom a { color: var(--gold); }
-
-/* ═══════════════════════════════════════════
-   SCROLL ANIMATIONS
-   ═══════════════════════════════════════════ */
-.reveal {
-  opacity: 0;
-  transform: translateY(35px);
-  transition: all 0.8s var(--transition);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-d1 { transition-delay: 0.12s; }
-.reveal-d2 { transition-delay: 0.24s; }
-.reveal-d3 { transition-delay: 0.36s; }
-.reveal-d4 { transition-delay: 0.48s; }
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE GLOBAL
-   ═══════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .container { padding: 0 2rem; }
-  nav { padding: 1.2rem 2rem; }
-  nav.scrolled { padding: 0.8rem 2rem; }
-  .page-hero { padding: 5rem 2rem 3rem; }
-  .footer-top { grid-template-columns: 1fr 1fr; padding: 3rem 2rem 2rem; }
-  .footer-bottom { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-}
-
-@media (max-width: 768px) {
-  .container { padding: 0 1.5rem; }
-  .page-hero { min-height: 45vh; padding: 5rem 1.5rem 2.5rem; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-}
-
-</style>
-<style>
-.contact-section {
-  display: grid; grid-template-columns: 1fr 1.2fr; min-height: 600px;
-}
-.contact-info {
-  background: var(--cream); padding: 6rem 4rem;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.cd { margin-bottom: 2rem; }
-.cd-label {
-  font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 0.5rem; font-weight: 500;
-}
-.cd-value {
-  font-size: 1rem; font-weight: 300; color: var(--navy);
-}
-.cd-value a {
-  color: var(--navy); border-bottom: 1px solid var(--gold); transition: color 0.3s;
-}
-.cd-value a:hover { color: var(--gold); }
-
-.contact-form-wrap {
-  background: var(--white); padding: 6rem 4rem;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.contact-form-wrap h3 {
-  font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300;
-  color: var(--navy); margin-bottom: 0.5rem;
-}
-.contact-form-wrap .subtitle {
-  font-size: 0.88rem; font-weight: 300; color: var(--gray-light);
-  margin-bottom: 2.5rem;
-}
-.fg { margin-bottom: 1.2rem; }
-.fg label {
-  display: block; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gray); margin-bottom: 0.4rem; font-weight: 500;
-}
-.fg input, .fg textarea, .fg select {
-  width: 100%; padding: 0.9rem 1rem;
-  border: 1px solid var(--gray-border); background: var(--cream);
-  font-family: var(--font-display); font-size: 0.88rem; font-weight: 300;
-  color: var(--navy); transition: border-color 0.3s; outline: none;
-}
-.fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--gold); }
-.fg textarea { resize: vertical; min-height: 100px; }
-.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-
-/* FAQ */
-.faq {
-  padding: 8rem 4rem; background: var(--cream);
-}
-.faq-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-  max-width: var(--max-width); margin: 4rem auto 0;
-}
-.faq-item {
-  padding: 2rem; background: var(--white);
-  border: 1px solid rgba(16,19,63,0.04);
+.clients-row { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 60px; }
+.cl-type { text-align: center; }
+.cl-icon {
+  width: 72px; height: 72px;
+  border: 1px solid rgba(200,169,81,0.2); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; font-size: 18px; color: var(--gold);
   transition: all 0.4s;
 }
-.faq-item:hover { border-color: var(--gold); box-shadow: 0 8px 25px rgba(16,19,63,0.04); }
-.faq-q {
-  font-size: 0.95rem; font-weight: 500; color: var(--navy); margin-bottom: 0.8rem;
+.cl-type:hover .cl-icon { background: var(--gold); color: var(--black); border-color: var(--gold); }
+.cl-name { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-light); font-weight: 500; line-height: 1.6; }
+
+/* ══════ CTA BANNER ══════ */
+.cta-section {
+  padding: 140px 60px; text-align: center;
+  background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(200,169,81,0.04) 0%, transparent 70%), var(--black-light);
+  border-top: 1px solid rgba(200,169,81,0.06);
 }
-.faq-a {
-  font-size: 0.85rem; font-weight: 300; line-height: 1.8; color: var(--gray-light);
+.cta-section .section-desc { margin: 0 auto 40px; text-align: center; color: var(--gray); }
+
+/* ══════ FOOTER ══════ */
+footer { padding: 80px 60px 40px; border-top: 1px solid rgba(200,169,81,0.1); }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px;
+  max-width: 1400px; margin: 0 auto 60px;
+}
+.footer-brand-logo {
+  font-family: var(--serif); font-size: 24px; font-weight: 300;
+  letter-spacing: 8px; color: var(--gold); margin-bottom: 20px; display: inline-block;
+}
+.footer-brand-logo span { font-weight: 600; }
+.footer-brand-desc { font-size: 13px; color: var(--gray); line-height: 1.8; max-width: 320px; }
+.footer-col-title {
+  font-size: 10px; font-weight: 600; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+}
+.footer-links a { display: block; font-size: 13px; color: var(--gray); margin-bottom: 12px; transition: color 0.3s; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05); padding-top: 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1400px; margin: 0 auto;
+}
+.footer-bottom p { font-size: 11px; color: var(--gray); letter-spacing: 1px; }
+.footer-bottom a { color: var(--gold); }
+
+/* ══════ SCROLL REVEAL ══════ */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.15s; }
+.reveal-d2 { transition-delay: 0.3s; }
+.reveal-d3 { transition-delay: 0.45s; }
+
+/* ══════ RESPONSIVE ══════ */
+@media (max-width: 1024px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+  .intro-grid { grid-template-columns: 1fr; gap: 48px; }
+  .brands-grid { grid-template-columns: 1fr; max-width: 600px; }
+  .approach-grid { grid-template-columns: 1fr 1fr; }
+  .intro-section, .brands-section, .approach-section, .clients-section, .cta-section { padding: 80px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  footer { padding: 48px 24px 24px; }
+}
+@media (max-width: 768px) {
+  .hero-title { font-size: 40px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .approach-grid { grid-template-columns: 1fr; }
+  .intro-stats { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
 
-/* Process reminder */
-.process-reminder {
-  padding: 6rem 4rem; background: var(--white);
-}
-.pr-steps {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-  max-width: var(--max-width); margin: 3rem auto 0;
-}
-.pr-step {
-  text-align: center; padding: 2rem;
-  border-right: 1px solid var(--gray-border);
-}
+
+.page-hero { min-height: 50vh; padding: 160px 60px 80px; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,169,81,0.04) 0%, transparent 70%), var(--black); display: flex; align-items: flex-end; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; top: -40%; right: -15%; width: 60vw; height: 60vw; border-radius: 50%; border: 1px solid rgba(200,169,81,0.05); }
+.page-hero-content { max-width: 1400px; width: 100%; margin: 0 auto; position: relative; z-index: 2; }
+
+.contact-section { display: grid; grid-template-columns: 1fr 1.2fr; min-height: 600px; }
+.contact-info { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(200,169,81,0.06); }
+.cd { margin-bottom: 32px; }
+.cd-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
+.cd-value { font-size: 16px; font-weight: 300; color: var(--gray-light); }
+.cd-value a { color: var(--gray-light); border-bottom: 1px solid rgba(200,169,81,0.3); transition: color 0.3s; }
+.cd-value a:hover { color: var(--gold); }
+
+.contact-form-wrap { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; background: var(--black-light); }
+.contact-form-wrap h3 { font-family: var(--serif); font-size: 32px; font-weight: 300; margin-bottom: 8px; }
+.contact-form-wrap .subtitle { font-size: 14px; font-weight: 300; color: var(--gray); margin-bottom: 40px; }
+.fg { margin-bottom: 20px; }
+.fg label { display: block; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-light); margin-bottom: 8px; font-weight: 600; }
+.fg input, .fg textarea, .fg select { width: 100%; padding: 14px 16px; border: 1px solid rgba(200,169,81,0.12); background: var(--black-card); font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--white); transition: border-color 0.3s; outline: none; }
+.fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--gold); }
+.fg select { appearance: none; cursor: pointer; }
+.fg textarea { resize: vertical; min-height: 100px; }
+.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Process */
+.process-section { padding: 100px 60px; border-top: 1px solid rgba(200,169,81,0.06); }
+.pr-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1400px; margin: 48px auto 0; }
+.pr-step { text-align: center; padding: 32px; border-right: 1px solid rgba(200,169,81,0.06); }
 .pr-step:last-child { border-right: none; }
-.pr-num {
-  font-family: var(--font-serif); font-size: 2rem; font-weight: 300;
-  color: var(--gold); margin-bottom: 0.8rem;
-}
-.pr-title {
-  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
-  font-weight: 600; color: var(--navy); margin-bottom: 0.5rem;
-}
-.pr-text {
-  font-size: 0.8rem; font-weight: 300; line-height: 1.7; color: var(--gray-light);
-}
+.pr-num { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--gold); margin-bottom: 12px; }
+.pr-title { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.pr-text { font-size: 13px; font-weight: 300; color: var(--gray); line-height: 1.6; }
+
+/* FAQ */
+.faq { padding: 140px 60px; background: var(--black-light); border-top: 1px solid rgba(200,169,81,0.06); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1400px; margin: 60px auto 0; }
+.faq-item { padding: 32px; border: 1px solid rgba(200,169,81,0.08); transition: all 0.4s; background: var(--black-card); }
+.faq-item:hover { border-color: rgba(200,169,81,0.2); }
+.faq-q { font-size: 15px; font-weight: 500; margin-bottom: 12px; }
+.faq-a { font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--gray); }
 
 @media (max-width: 1024px) {
   .contact-section { grid-template-columns: 1fr; }
+  .contact-info { border-right: none; border-bottom: 1px solid rgba(200,169,81,0.06); }
   .faq-grid { grid-template-columns: 1fr; }
   .pr-steps { grid-template-columns: 1fr 1fr; }
-  .pr-step { border-right: none; border-bottom: 1px solid var(--gray-border); }
+  .pr-step { border-right: none; border-bottom: 1px solid rgba(200,169,81,0.06); }
+  .contact-info, .contact-form-wrap { padding: 48px 24px; }
+  .page-hero, .process-section, .faq { padding: 80px 24px; }
 }
 @media (max-width: 768px) {
-  .contact-info, .contact-form-wrap { padding: 3rem 1.5rem; }
-  .faq, .process-reminder { padding: 4rem 1.5rem; }
   .fg-row { grid-template-columns: 1fr; }
   .pr-steps { grid-template-columns: 1fr; }
+  .page-hero { min-height: 40vh; padding: 120px 24px 48px; }
 }
 </style>
 </head>
 <body>
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">DISTRISKIN</a>
-  <ul class="nav-links">
-    <li><a href="approche.html">Notre Approche</a></li>
-    <li class="nav-dropdown"><a href="#">Nos Marques ▾</a><div class="nav-dropdown-menu"><a href="teslamed.html">TESLAMED</a><a href="niance.html">NIANCE</a><a href="joadams.html">JO ADAMS</a></div></li>
-    <li><a href="equipe.html">L'Équipe</a></li>
-    <li><a href="blog.html">Journal</a></li>
-    <li><a href="contact.html" class="nav-cta active">Contact</a></li>
-  </ul>
-  <div class="menu-toggle" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></div>
-</nav>
+<nav id="nav"><a href="index.html" class="nav-logo"><span>DISTRI</span>SKIN</a><div class="nav-links"><a href="approche.html">Notre Approche</a><div class="nav-dropdown"><a href="#">Nos Marques ▾</a><div class="nav-dropdown-menu"><a href="teslamed.html">TESLAMED</a><a href="niance.html">NIANCE</a><a href="joadams.html">JO ADAMS</a></div></div><a href="equipe.html">L'Équipe</a><a href="contact.html" class="nav-cta active">Contact</a></div><div class="menu-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></div></nav>
 
-<div class="page-hero">
-  <div class="page-hero-content">
-    <span class="section-label">Contact</span>
-    <h1 class="section-title" style="color:var(--white); font-size: clamp(2.2rem,5vw,3.8rem);">Construisons <em>ensemble</em></h1>
-    <p class="section-desc" style="color:rgba(255,255,255,0.5);">Vous êtes un professionnel du soin ou du bien-être et vous souhaitez proposer des produits d'exception ? Échangeons.</p>
-  </div>
-</div>
+<div class="page-hero"><div class="page-hero-content">
+  <p class="section-label">Contact</p>
+  <h1 class="section-title" style="font-size:clamp(36px,6vw,64px);">Construisons <em>ensemble</em></h1>
+  <p class="section-desc" style="color:var(--gray); margin-top:24px;">Vous êtes un professionnel du soin ou du bien-être et vous souhaitez proposer des produits d'exception ? Échangeons.</p>
+</div></div>
 
-<!-- CONTACT FORM + INFO -->
 <div class="contact-section">
   <div class="contact-info">
-    <span class="section-label reveal">Coordonnées</span>
-    <h2 class="section-title reveal reveal-d1">Restons en <em>contact</em></h2>
-    <div class="gold-line reveal reveal-d1"></div>
-
-    <div class="cd reveal reveal-d2">
-      <div class="cd-label">Téléphone</div>
-      <div class="cd-value"><a href="tel:+33688405645">+33 6 88 40 56 45</a></div>
-    </div>
-    <div class="cd reveal reveal-d2">
-      <div class="cd-label">Email</div>
-      <div class="cd-value"><a href="mailto:contact@distriskin.com">contact@distriskin.com</a></div>
-    </div>
-    <div class="cd reveal reveal-d3">
-      <div class="cd-label">Siège Social</div>
-      <div class="cd-value">DISTRISKIN SARL<br>421 rue des Cordineaux<br>69380 Dommartin, France</div>
-    </div>
-    <div class="cd reveal reveal-d3">
-      <div class="cd-label">N° TVA</div>
-      <div class="cd-value">FR03988827309</div>
-    </div>
-    <div class="cd reveal reveal-d3">
-      <div class="cd-label">Site web</div>
-      <div class="cd-value"><a href="https://www.distriskin.com">www.distriskin.com</a></div>
-    </div>
+    <p class="section-label reveal">Coordonnées</p>
+    <h2 class="section-title reveal reveal-d1" style="margin-bottom:32px;">Restons en <em>contact</em></h2>
+    <div class="cd reveal reveal-d2"><div class="cd-label">Téléphone</div><div class="cd-value"><a href="tel:+33688405645">+33 6 88 40 56 45</a></div></div>
+    <div class="cd reveal reveal-d2"><div class="cd-label">Email</div><div class="cd-value"><a href="mailto:contact@distriskin.com">contact@distriskin.com</a></div></div>
+    <div class="cd reveal reveal-d3"><div class="cd-label">Siège Social</div><div class="cd-value">DISTRISKIN SARL<br>421 rue des Cordineaux<br>69380 Dommartin, France</div></div>
+    <div class="cd reveal reveal-d3"><div class="cd-label">N° TVA</div><div class="cd-value">FR03988827309</div></div>
   </div>
 
   <div class="contact-form-wrap">
@@ -615,114 +469,42 @@ footer {
         <div class="fg reveal"><label>Email *</label><input type="email" placeholder="votre@email.com" required></div>
         <div class="fg reveal reveal-d1"><label>Téléphone</label><input type="tel" placeholder="+33 ..."></div>
       </div>
-      <div class="fg reveal">
-        <label>Type d'établissement *</label>
-        <select required>
-          <option value="">Sélectionnez votre type d'établissement...</option>
-          <option>Spa d'hôtel 4* / 5* / Palace</option>
-          <option>Institut de beauté premium</option>
-          <option>Parfumerie sélective</option>
-          <option>Pharmacie / Parapharmacie</option>
-          <option>Centre de médecine esthétique / préventive</option>
-          <option>Concept store / Wellness</option>
-          <option>Autre</option>
-        </select>
-      </div>
-      <div class="fg reveal">
-        <label>Marques qui vous intéressent</label>
-        <select>
-          <option value="">Sélectionnez...</option>
-          <option>TESLAMED — Technologie esthétique</option>
-          <option>NIANCE — Cosmétique suisse holistique</option>
-          <option>JO ADAMS — Parfumerie de niche</option>
-          <option>Plusieurs marques / Synergie</option>
-          <option>Je souhaite en discuter</option>
-        </select>
-      </div>
-      <div class="fg reveal">
-        <label>Votre projet</label>
-        <textarea placeholder="Décrivez votre établissement, vos besoins, vos objectifs... Plus nous en savons, mieux nous pourrons vous accompagner."></textarea>
-      </div>
-      <button type="submit" class="btn-primary reveal" style="width:100%; padding:1.1rem; border:none; cursor:pointer;">Envoyer ma demande</button>
+      <div class="fg reveal"><label>Type d'établissement *</label><select required><option value="">Sélectionnez...</option><option>Spa d'hôtel 4* / 5* / Palace</option><option>Institut de beauté premium</option><option>Parfumerie sélective</option><option>Pharmacie / Centre médical</option><option>Concept store / Wellness</option><option>Autre</option></select></div>
+      <div class="fg reveal"><label>Marques qui vous intéressent</label><select><option value="">Sélectionnez...</option><option>TESLAMED — Technologie esthétique</option><option>NIANCE — Cosmétique suisse</option><option>JO ADAMS — Parfumerie de niche</option><option>Plusieurs marques / Synergie</option><option>Je souhaite en discuter</option></select></div>
+      <div class="fg reveal"><label>Votre projet</label><textarea placeholder="Décrivez vos besoins, vos objectifs..."></textarea></div>
+      <button type="submit" class="btn-primary reveal" style="width:100%; border:none; cursor:pointer;">Envoyer ma demande</button>
     </form>
   </div>
 </div>
 
-<!-- PROCESS REMINDER -->
-<section class="process-reminder">
-  <div class="text-center">
-    <span class="section-label reveal">Comment ça se passe ?</span>
-    <h2 class="section-title reveal reveal-d1">Les étapes du <em>partenariat</em></h2>
-    <div class="gold-line gold-line-center reveal reveal-d1"></div>
-  </div>
+<section class="process-section">
+  <div class="section-header"><p class="section-label reveal">Comment ça se passe ?</p><h2 class="section-title reveal reveal-d1">Les étapes du <em>partenariat</em></h2></div>
   <div class="pr-steps">
-    <div class="pr-step reveal">
-      <div class="pr-num">01</div>
-      <div class="pr-title">Votre demande</div>
-      <p class="pr-text">Vous remplissez le formulaire ci-dessus</p>
-    </div>
-    <div class="pr-step reveal reveal-d1">
-      <div class="pr-num">02</div>
-      <div class="pr-title">Premier échange</div>
-      <p class="pr-text">Nous vous rappelons sous 48h pour comprendre vos besoins</p>
-    </div>
-    <div class="pr-step reveal reveal-d2">
-      <div class="pr-num">03</div>
-      <div class="pr-title">Proposition</div>
-      <p class="pr-text">Nous co-construisons une offre adaptée à votre établissement</p>
-    </div>
-    <div class="pr-step reveal reveal-d3">
-      <div class="pr-num">04</div>
-      <div class="pr-title">Lancement</div>
-      <p class="pr-text">Formation, mise en place et accompagnement continu</p>
-    </div>
+    <div class="pr-step reveal"><div class="pr-num">01</div><div class="pr-title">Votre demande</div><p class="pr-text">Vous remplissez le formulaire</p></div>
+    <div class="pr-step reveal reveal-d1"><div class="pr-num">02</div><div class="pr-title">Premier échange</div><p class="pr-text">Nous vous rappelons sous 48h</p></div>
+    <div class="pr-step reveal reveal-d2"><div class="pr-num">03</div><div class="pr-title">Proposition</div><p class="pr-text">Offre adaptée à votre établissement</p></div>
+    <div class="pr-step reveal reveal-d3"><div class="pr-num">04</div><div class="pr-title">Lancement</div><p class="pr-text">Formation et accompagnement continu</p></div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="faq">
-  <div class="text-center">
-    <span class="section-label reveal">Questions fréquentes</span>
-    <h2 class="section-title reveal reveal-d1">Tout ce que vous devez <em>savoir</em></h2>
-    <div class="gold-line gold-line-center reveal reveal-d1"></div>
-  </div>
+  <div class="section-header"><p class="section-label reveal">Questions fréquentes</p><h2 class="section-title reveal reveal-d1">Tout ce que vous devez <em>savoir</em></h2></div>
   <div class="faq-grid">
-    <div class="faq-item reveal">
-      <div class="faq-q">Quels types d'établissements peuvent devenir partenaires ?</div>
-      <p class="faq-a">Nous travaillons principalement avec les spas d'hôtels 4* et 5*, les palaces, les instituts de beauté premium, les parfumeries sélectives, les pharmacies et les centres de médecine préventive.</p>
-    </div>
-    <div class="faq-item reveal reveal-d1">
-      <div class="faq-q">Proposez-vous des formations ?</div>
-      <p class="faq-a">Oui, c'est même l'un de nos points forts. Nos formateurs experts dispensent des formations sur mesure couvrant les protocoles de soins, la maîtrise des produits et les techniques de vente.</p>
-    </div>
-    <div class="faq-item reveal">
-      <div class="faq-q">Puis-je sélectionner une seule marque ?</div>
-      <p class="faq-a">Absolument. Chaque marque fonctionne de manière autonome. Cependant, la synergie entre TESLAMED et NIANCE offre des résultats particulièrement intéressants que nous aimons présenter.</p>
-    </div>
-    <div class="faq-item reveal reveal-d1">
-      <div class="faq-q">Quelle est votre couverture géographique ?</div>
-      <p class="faq-a">Nous couvrons l'ensemble du territoire français métropolitain grâce à notre réseau d'agents commerciaux dédiés par zone. Chaque partenaire bénéficie d'un interlocuteur de proximité.</p>
-    </div>
-    <div class="faq-item reveal">
-      <div class="faq-q">Comment se déroule le suivi après le lancement ?</div>
-      <p class="faq-a">Notre approche est axée sur le long terme. Votre agent dédié assure un suivi régulier, analyse les performances sell-out avec vous et ajuste les recommandations en conséquence.</p>
-    </div>
-    <div class="faq-item reveal reveal-d1">
-      <div class="faq-q">Quels sont les délais de livraison ?</div>
-      <p class="faq-a">Nous nous engageons sur des délais de livraison rapides et fiables. Les détails sont discutés lors de la mise en place du partenariat selon vos besoins spécifiques.</p>
-    </div>
+    <div class="faq-item reveal"><div class="faq-q">Quels types d'établissements peuvent devenir partenaires ?</div><p class="faq-a">Nous travaillons principalement avec les spas d'hôtels 4* et 5*, les palaces, les instituts de beauté premium, les parfumeries sélectives, les pharmacies et les centres de médecine préventive.</p></div>
+    <div class="faq-item reveal reveal-d1"><div class="faq-q">Proposez-vous des formations ?</div><p class="faq-a">Oui, c'est même l'un de nos points forts. Nos formateurs experts dispensent des formations sur mesure couvrant les protocoles de soins, la maîtrise des produits et les techniques de vente.</p></div>
+    <div class="faq-item reveal"><div class="faq-q">Puis-je sélectionner une seule marque ?</div><p class="faq-a">Absolument. Chaque marque fonctionne de manière autonome. Cependant, la synergie entre TESLAMED et NIANCE offre des résultats particulièrement intéressants.</p></div>
+    <div class="faq-item reveal reveal-d1"><div class="faq-q">Quelle est votre couverture géographique ?</div><p class="faq-a">Nous couvrons l'ensemble du territoire français métropolitain grâce à notre réseau d'agents commerciaux dédiés par zone.</p></div>
+    <div class="faq-item reveal"><div class="faq-q">Comment se déroule le suivi après le lancement ?</div><p class="faq-a">Votre agent dédié assure un suivi régulier, analyse les performances sell-out avec vous et ajuste les recommandations en conséquence.</p></div>
+    <div class="faq-item reveal reveal-d1"><div class="faq-q">Quels sont les délais de livraison ?</div><p class="faq-a">Nous nous engageons sur des délais de livraison rapides et fiables. Les détails sont discutés lors de la mise en place du partenariat.</p></div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-top"><div><div class="footer-brand">DISTRISKIN</div><p class="footer-tagline">Expert de la distribution premium.</p></div><div><div class="footer-col-title">Navigation</div><div class="footer-links"><a href="approche.html">Notre Approche</a><a href="equipe.html">L'Équipe</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div></div><div><div class="footer-col-title">Nos Marques</div><div class="footer-links"><a href="teslamed.html">TESLAMED</a><a href="niance.html">NIANCE</a><a href="joadams.html">JO ADAMS</a></div></div><div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="tel:+33688405645">+33 6 88 40 56 45</a><a href="mailto:contact@distriskin.com">contact@distriskin.com</a></div></div></div>
-  <div class="footer-bottom"><span>© 2025 DISTRISKIN SARL</span><span><a href="#">Mentions légales</a></span></div>
-</footer>
+<footer><div class="footer-grid"><div><div class="footer-brand-logo"><span>DISTRI</span>SKIN</div><p class="footer-brand-desc">Expert de la distribution premium.</p></div><div><div class="footer-col-title">Navigation</div><div class="footer-links"><a href="approche.html">Notre Approche</a><a href="equipe.html">L'Équipe</a><a href="contact.html">Contact</a></div></div><div><div class="footer-col-title">Nos Marques</div><div class="footer-links"><a href="teslamed.html">TESLAMED</a><a href="niance.html">NIANCE</a><a href="joadams.html">JO ADAMS</a></div></div><div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="tel:+33688405645">+33 6 88 40 56 45</a><a href="mailto:contact@distriskin.com">contact@distriskin.com</a></div></div></div><div class="footer-bottom"><p>© 2025 DISTRISKIN</p><p><a href="#">Mentions légales</a></p></div></footer>
 
 <script>
-const nav=document.getElementById('navbar');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80));
-const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60));
+const obs = new IntersectionObserver(e => { e.forEach(i => { if(i.isIntersecting) i.target.classList.add('visible'); }); }, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>

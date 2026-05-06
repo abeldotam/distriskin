@@ -65,7 +65,9 @@ useSeoMeta({
     <NuxtLink to="/contact" class="btn-primary">Nous contacter</NuxtLink>
     <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-secondary">Accéder à la boutique en ligne ↗</a>
   </div>
-  <a v-reveal.d3 href="https://www.instagram.com/jo_adams_france/" target="_blank" rel="noopener" class="ig-link">Suivez-nous sur Instagram&nbsp;: @jo_adams_france ↗</a>
+  <div v-reveal.d3 class="ig-wrap">
+    <a href="https://www.instagram.com/jo_adams_france/" target="_blank" rel="noopener" class="ig-link">Suivez-nous sur Instagram&nbsp;: @jo_adams_france ↗</a>
+  </div>
 </section>
 </template>
 
@@ -76,6 +78,7 @@ useSeoMeta({
 .brand-visual { aspect-ratio: 4/5; background: none; border: none; }
 .brand-visual img { width: 50%; max-width: 220px; height: auto; filter: drop-shadow(0 0 40px rgba(200,169,81,0.15)); }
 .cta-buttons { display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
-.ig-link { display: inline-block; margin-top: 32px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,169,81,0.3); padding-bottom: 4px; transition: all 0.3s; }
+.ig-wrap { margin-top: 32px; text-align: center; }
+.ig-link { display: inline-block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,169,81,0.3); padding-bottom: 4px; transition: all 0.3s; }
 .ig-link:hover { border-bottom-color: var(--gold); color: var(--gold-light); }
 </style>
