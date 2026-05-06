@@ -140,6 +140,16 @@ const baItems = [
   <div v-reveal.d1 class="uc-card"><div class="uc-title">Synergie NIANCE</div><p class="uc-text">La combinaison avec les cosmétiques NIANCE décuple l'efficacité des protocoles — un argument de différenciation puissant sur votre marché.</p></div>
 </div></section>
 
+<section class="shop-strip" v-reveal>
+  <div class="shop-strip-inner">
+    <div class="shop-strip-text">
+      <p class="shop-strip-label">Boutique en ligne</p>
+      <h3 class="shop-strip-title">Retrouvez TESLAMED et nos <em>autres marques</em> sur la boutique</h3>
+    </div>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-primary">Accéder à la boutique ↗</a>
+  </div>
+</section>
+
 <section class="other-brands"><p v-reveal class="section-label">Nos Autres Marques</p><div v-reveal.d1 class="ob-row"><NuxtLink to="/marques/niance" class="ob-link">NIANCE — Cosmétique Holistique</NuxtLink><NuxtLink to="/marques/joadams" class="ob-link">JO ADAMS — Parfumerie de Niche</NuxtLink></div></section>
 
 <section class="cta-section">

@@ -13,10 +13,6 @@ useSeoMeta({
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grain"></div>
-  <div class="hero-line"></div>
-  <div class="hero-line"></div>
-  <div class="hero-line"></div>
-  <div class="hero-line"></div>
   <div class="hero-content">
     <div class="hero-badge">Distribution Sélective Premium</div>
     <h1 class="hero-title">L'excellence au service<br>de la <em>beauté</em></h1>
@@ -101,6 +97,17 @@ useSeoMeta({
       <p class="brand-desc">Extraits de parfums de niche d'exception. Des créations olfactives uniques pour une clientèle en quête d'exclusivité et de raffinement absolu.</p>
       <NuxtLink to="/marques/joadams" class="brand-link">Découvrir Jo Adams →</NuxtLink>
     </div>
+  </div>
+</section>
+
+<!-- SHOP STRIP -->
+<section class="shop-strip" v-reveal>
+  <div class="shop-strip-inner">
+    <div class="shop-strip-text">
+      <p class="shop-strip-label">Boutique en ligne</p>
+      <h3 class="shop-strip-title">Découvrez l'ensemble de nos <em>marques distribuées</em> en ligne</h3>
+    </div>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-primary">Accéder à la boutique ↗</a>
   </div>
 </section>
 

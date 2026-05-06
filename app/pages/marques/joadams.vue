@@ -55,6 +55,16 @@ useSeoMeta({
   </div>
 </section>
 
+<section class="shop-strip" v-reveal>
+  <div class="shop-strip-inner">
+    <div class="shop-strip-text">
+      <p class="shop-strip-label">Boutique en ligne</p>
+      <h3 class="shop-strip-title">Retrouvez JO ADAMS et nos <em>autres marques</em> sur la boutique</h3>
+    </div>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-primary">Accéder à la boutique ↗</a>
+  </div>
+</section>
+
 <section class="other-brands"><p v-reveal class="section-label">Nos Autres Marques</p><div v-reveal.d1 class="ob-row"><NuxtLink to="/marques/teslamed" class="ob-link">TESLAMED — Technologie Esthétique</NuxtLink><NuxtLink to="/marques/niance" class="ob-link">NIANCE — Cosmétique Holistique</NuxtLink></div></section>
 
 <section class="cta-section">
