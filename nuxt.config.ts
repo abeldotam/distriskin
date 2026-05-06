@@ -64,7 +64,17 @@ export default defineNuxtConfig({
         allow: '/',
       },
       {
-        userAgent: ['GPTBot', 'Google-Extended', 'ClaudeBot', 'PerplexityBot', 'ChatGPT-User'],
+        userAgent: [
+          'GPTBot',
+          'OAI-SearchBot',
+          'ChatGPT-User',
+          'ClaudeBot',
+          'anthropic-ai',
+          'PerplexityBot',
+          'Google-Extended',
+          'CCBot',
+          'cohere-ai',
+        ],
         allow: '/',
       },
     ],

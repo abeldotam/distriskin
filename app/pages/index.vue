@@ -6,6 +6,37 @@ useSeoMeta({
   ogDescription: 'Distriskin, distributeur de marques premium pour les professionnels du soin et du bien-être : TESLAMED, NIANCE, JO ADAMS.',
   ogImage: '/images/logo-distriskin.jpeg',
 })
+
+const faq = [
+  { q: 'Quelles marques distribue Distriskin ?', a: "Distriskin distribue trois marques premium en France : TESLAMED (technologie esthétique italienne avec l'appareil Ion Stream 680 Pro), NIANCE (cosmétiques et compléments alimentaires suisses haut de gamme) et JO ADAMS (extraits de parfums de niche germano-égyptiens)." },
+  { q: "À qui s'adresse Distriskin ?", a: "Distriskin s'adresse exclusivement aux professionnels (B2B) : spas d'hôtels 4 étoiles, 5 étoiles et palaces, instituts de beauté premium, parfumeries sélectives, pharmacies, cliniques esthétiques et centres de médecine préventive." },
+  { q: 'Distriskin couvre-t-il toute la France ?', a: "Oui. Distriskin dispose d'une équipe commerciale dédiée couvrant l'ensemble du territoire français, organisée par zones (Île-de-France, Nord-Est, Nord-Ouest et Sud) avec un commercial référent par secteur." },
+  { q: 'Existe-t-il une boutique en ligne ?', a: "Oui. Le catalogue produits et les commandes sont accessibles sur la boutique en ligne distriskin-shop.com, en complément du suivi commercial assuré par l'équipe terrain." },
+  { q: 'Comment devenir partenaire Distriskin ?', a: "Contactez-nous via le formulaire du site ou par téléphone au +33 6 88 40 56 45. Un commercial de votre zone vous recontacte pour évaluer ensemble vos besoins, présenter les marques pertinentes et construire une offre adaptée à votre établissement." },
+]
+
+useSchemaOrg([
+  defineLocalBusiness({
+    name: 'DISTRISKIN',
+    description: 'Distributeur français de marques premium pour les professionnels du soin et du bien-être.',
+    address: {
+      streetAddress: '421 rue des Cordineaux',
+      addressLocality: 'Dommartin',
+      postalCode: '69380',
+      addressRegion: 'Auvergne-Rhône-Alpes',
+      addressCountry: 'FR',
+    },
+    telephone: '+33688405645',
+    email: 'contact@distriskin.com',
+    areaServed: 'FR',
+    priceRange: '€€€',
+    sameAs: ['https://www.distriskin-shop.com'],
+  }),
+  {
+    '@type': 'FAQPage',
+    mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+  },
+])
 </script>
 
 <template>
@@ -45,6 +76,14 @@ useSeoMeta({
     <span class="marquee-item">Centres de Bien-être</span>
   </div>
 </div>
+
+<!-- ANSWER BLOCK (AI-search citable) -->
+<section class="answer-block" aria-labelledby="qa-distriskin">
+  <h2 id="qa-distriskin" class="answer-block-q">Qu'est-ce que Distriskin ?</h2>
+  <p class="answer-block-text">
+    <strong>Distriskin</strong> est un distributeur français de marques premium dédié aux professionnels du soin et du bien-être (B2B). L'entreprise sélectionne et commercialise en France trois marques d'exception&nbsp;: <strong>TESLAMED</strong> (technologie esthétique italienne avec l'appareil Ion Stream 680 Pro, combinant trois générateurs et deux brevets internationaux), <strong>NIANCE</strong> (cosmétiques et compléments alimentaires suisses haut de gamme, avec les technologies propriétaires Swiss Glacier Complex® et FERNESSE™) et <strong>JO ADAMS</strong> (extraits de parfums de niche germano-égyptiens à 30-40&nbsp;% de concentration). Distriskin s'adresse aux spas d'hôtels 4*, 5* et palaces, aux instituts de beauté premium, aux parfumeries sélectives, aux pharmacies et aux centres de médecine préventive. L'équipe commerciale couvre l'ensemble du territoire français par zones avec un commercial dédié, et propose un accompagnement sur-mesure&nbsp;: formation, support marketing, suivi sell-out, service après-vente et boutique en ligne dédiée.
+  </p>
+</section>
 
 <!-- INTRO / QUI SOMMES-NOUS -->
 <section class="intro-section">
@@ -153,6 +192,20 @@ useSeoMeta({
     <div class="cl-type reveal reveal-d1" v-reveal><div class="cl-icon">◆</div><div class="cl-name">Instituts de Beauté<br>Premium</div></div>
     <div class="cl-type reveal reveal-d2" v-reveal><div class="cl-icon">❖</div><div class="cl-name">Parfumeries<br>Sélectives</div></div>
     <div class="cl-type reveal reveal-d3" v-reveal><div class="cl-icon">✧</div><div class="cl-name">Pharmacies &amp; Centres<br>Médecine Préventive</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-header">
+    <p class="section-label" v-reveal>Questions fréquentes</p>
+    <h2 class="section-title" v-reveal.d1>Tout savoir sur <em>Distriskin</em></h2>
+  </div>
+  <div class="faq-list">
+    <details v-for="(item, i) in faq" :key="i" class="faq-item" v-reveal>
+      <summary>{{ item.q }}</summary>
+      <div class="faq-answer"><p>{{ item.a }}</p></div>
+    </details>
   </div>
 </section>
 
