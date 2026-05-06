@@ -6,6 +6,28 @@ useSeoMeta({
   ogDescription: 'Découvrez TESLAMED, technologie esthétique avancée distribuée par Distriskin. Microcourants, canon à ions et soins innovants pour spas, instituts et centres de médecine préventive.',
   ogImage: '/images/logo-distriskin.jpeg',
 })
+
+const maintenanceStandard = '1 soin/mois pendant 6 mois, puis 1 soin tous les 2 mois pour prolonger durablement les résultats'
+const maintenanceNone = 'non requis (résultat permanent)'
+
+const baItems = [
+  { letter: 'A', ext: 'png', zone: 'Contour des yeux', result: '3 soins de 30 minutes', next: '1 soin à J+7', maintenance: maintenanceStandard },
+  { letter: 'B', ext: 'png', zone: 'Lèvres et contour', result: '1 soin de 20 minutes', next: '4 soins espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+  { letter: 'C', ext: 'jpg', zone: 'Contour des yeux', result: '3 soins de 30 minutes', maintenance: maintenanceStandard },
+  { letter: 'D', ext: 'jpg', zone: 'Contour des yeux', result: '1 soin de 30 minutes', maintenance: maintenanceStandard },
+  { letter: 'E', ext: 'jpg', zone: 'Scalp (cuir chevelu)', result: '5 soins de 20 minutes', next: 'cure de 10 soins espacés de 10 jours', maintenance: '1 soin tous les 2 mois pour prolonger durablement les résultats' },
+  { letter: 'F', ext: 'jpg', zone: 'Resurfaçage visage', result: '3 soins de 1 heure', maintenance: maintenanceNone },
+  { letter: 'G', ext: 'jpg', zone: 'Soin visage', result: '6 soins de 1 heure', rhythm: 'espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+  { letter: 'H', ext: 'jpg', zone: 'Élasticité bras', result: '3 soins de 30 minutes', rhythm: 'espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+  { letter: 'I', ext: 'png', zone: 'Élasticité bras', result: '3 soins de 30 minutes', rhythm: 'espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+  { letter: 'J', ext: 'png', zone: 'Vergetures', result: '7 soins de 30 minutes', rhythm: 'espacés de 7 à 10 jours', maintenance: maintenanceNone },
+  { letter: 'K', ext: 'jpg', zone: 'Tonicité ventre', result: '1 soin de 30 minutes', next: 'cure de 4 soins espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+  { letter: 'L', ext: 'jpg', zone: 'Soin visage', result: '3 soins de 1 heure', next: 'cure de 4 soins espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+  { letter: 'M', ext: 'jpg', zone: 'Acné inflammatoire', result: '8 soins de 1 heure', rhythm: '1 soin tous les 10 jours', maintenance: maintenanceNone },
+  { letter: 'N', ext: 'jpg', zone: 'Soin visage', result: '8 soins de 1 heure', rhythm: 'espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+  { letter: 'O', ext: 'jpg', zone: 'Soin visage', result: '8 soins de 1 heure', rhythm: 'espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+  { letter: 'P', ext: 'jpg', zone: 'Soin visage', result: '8 soins de 1 heure', rhythm: 'espacés de 7 à 10 jours', maintenance: maintenanceStandard },
+]
 </script>
 
 <template>
@@ -87,30 +109,24 @@ useSeoMeta({
 <!-- AVANT / APRÈS -->
 <section class="ba-section">
   <div class="section-header"><p v-reveal class="section-label">Résultats</p><h2 v-reveal.d1 class="section-title">Avant <em>&</em> Après</h2></div>
+  <div v-reveal.d2 class="ba-pledge">
+    <p class="ba-pledge-title">Distriskin s'engage :</p>
+    <ul class="ba-pledge-list">
+      <li>Aucune des photos avant/après n'est retouchée</li>
+      <li>Les résultats sont obtenus exclusivement grâce à des soins réalisés avec la technologie TeslaMed</li>
+    </ul>
+  </div>
   <div class="ba-grid">
-    <div v-reveal class="ba-card">
-      <NuxtImg src="/images/teslamed-ba-visage.jpg" alt="Avant/Après TeslaMed - Visage" loading="lazy" width="400" height="203" />
-      <div class="ba-label"><span>Avant</span><span class="gold">→</span><span>Après</span></div>
-    </div>
-    <div v-reveal.d1 class="ba-card">
-      <NuxtImg src="/images/teslamed-ba-rajeunissement.jpg" alt="Avant/Après TeslaMed - Rajeunissement" loading="lazy" width="400" height="437" />
-      <div class="ba-label"><span>Avant</span><span class="gold">→</span><span>Après</span></div>
-    </div>
-    <div v-reveal.d2 class="ba-card">
-      <NuxtImg src="/images/teslamed-ba-acne.jpg" alt="Avant/Après TeslaMed - Acné" loading="lazy" width="400" height="203" />
-      <div class="ba-label"><span>Avant</span><span class="gold">→</span><span>Après</span></div>
-    </div>
-    <div v-reveal class="ba-card">
-      <NuxtImg src="/images/teslamed-ba-yeux.jpg" alt="Avant/Après TeslaMed - Contour des yeux" loading="lazy" width="400" height="377" />
-      <div class="ba-label"><span>Avant</span><span class="gold">→</span><span>Après</span></div>
-    </div>
-    <div v-reveal.d1 class="ba-card">
-      <NuxtImg src="/images/teslamed-ba-corps.jpg" alt="Avant/Après TeslaMed - Corps" loading="lazy" width="400" height="297" />
-      <div class="ba-label"><span>Avant</span><span class="gold">→</span><span>Après</span></div>
-    </div>
-    <div v-reveal.d2 class="ba-card">
-      <NuxtImg src="/images/teslamed-ba-cuir-chevelu.jpg" alt="Avant/Après TeslaMed - Cuir chevelu" loading="lazy" width="400" height="496" />
-      <div class="ba-label"><span>Avant</span><span class="gold">→</span><span>Après</span></div>
+    <div v-for="item in baItems" :key="item.letter" v-reveal class="ba-card">
+      <NuxtImg :src="`/images/teslamed-ba/${item.letter}.${item.ext}`" :alt="`Avant/Après TeslaMed ${item.letter} — ${item.zone}`" loading="lazy" width="600" height="600" />
+      <div class="ba-label"><span>Avant</span><span class="gold">→</span><span>Après</span><span class="ba-letter">{{ item.letter }}</span></div>
+      <div class="ba-info">
+        <div class="ba-zone">{{ item.zone }}</div>
+        <div class="ba-meta"><span class="ba-meta-label">Résultat obtenu</span><span class="ba-meta-value">{{ item.result }}</span></div>
+        <div v-if="item.next" class="ba-meta"><span class="ba-meta-label">Suite recommandée</span><span class="ba-meta-value">{{ item.next }}</span></div>
+        <div v-if="item.rhythm" class="ba-meta"><span class="ba-meta-label">Rythme</span><span class="ba-meta-value">{{ item.rhythm }}</span></div>
+        <div class="ba-meta"><span class="ba-meta-label">Entretien</span><span class="ba-meta-value">{{ item.maintenance }}</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -126,7 +142,16 @@ useSeoMeta({
 
 <section class="other-brands"><p v-reveal class="section-label">Nos Autres Marques</p><div v-reveal.d1 class="ob-row"><NuxtLink to="/marques/niance" class="ob-link">NIANCE — Cosmétique Holistique</NuxtLink><NuxtLink to="/marques/joadams" class="ob-link">JO ADAMS — Parfumerie de Niche</NuxtLink></div></section>
 
-<section class="cta-section"><p v-reveal class="section-label">Intéressé par TESLAMED ?</p><h2 v-reveal.d1 class="section-title cta-title-spaced">Demandez une <em>démonstration</em></h2><p v-reveal.d2 class="section-desc">Découvrez comment l'Ion Stream 680 Pro peut transformer votre offre de soins et fidéliser votre clientèle.</p><NuxtLink to="/contact" v-reveal.d3 class="btn-primary">Nous contacter</NuxtLink></section>
+<section class="cta-section">
+  <p v-reveal class="section-label">Intéressé par TESLAMED ?</p>
+  <h2 v-reveal.d1 class="section-title cta-title-spaced">Demandez une <em>démonstration</em></h2>
+  <p v-reveal.d2 class="section-desc">Découvrez comment l'Ion Stream 680 Pro peut transformer votre offre de soins et fidéliser votre clientèle.</p>
+  <div v-reveal.d3 class="cta-buttons">
+    <NuxtLink to="/contact" class="btn-primary">Nous contacter</NuxtLink>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-secondary">Accéder à la boutique en ligne ↗</a>
+  </div>
+  <a v-reveal.d3 href="https://www.instagram.com/teslamed_france/" target="_blank" rel="noopener" class="ig-link">Suivez-nous sur Instagram&nbsp;: @teslamed_france ↗</a>
+</section>
 </template>
 
 <style scoped>
@@ -155,13 +180,29 @@ useSeoMeta({
 
 /* Avant/Apres */
 .ba-section { padding: 140px 60px; background: var(--black); }
-.ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 60px auto 0; }
-.ba-card { position: relative; overflow: hidden; border: 1px solid rgba(200,169,81,0.08); transition: all 0.5s cubic-bezier(0.23,1,0.32,1); }
+.ba-pledge { max-width: 760px; margin: 32px auto 0; padding: 24px 32px; border: 1px solid rgba(200,169,81,0.18); border-left: 2px solid var(--gold); background: rgba(200,169,81,0.03); }
+.ba-pledge-title { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: var(--gold); margin-bottom: 12px; }
+.ba-pledge-list { list-style: none; padding: 0; margin: 0; }
+.ba-pledge-list li { position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 14.5px; font-weight: 300; line-height: 1.7; color: var(--gray-light); }
+.ba-pledge-list li::before { content: ''; position: absolute; left: 0; top: 11px; width: 4px; height: 4px; background: var(--gold); }
+.ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1280px; margin: 60px auto 0; }
+.ba-card { position: relative; overflow: hidden; border: 1px solid rgba(200,169,81,0.08); transition: all 0.5s cubic-bezier(0.23,1,0.32,1); display: flex; flex-direction: column; }
 .ba-card:hover { border-color: rgba(200,169,81,0.25); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
 .ba-card img { width: 100%; height: auto; display: block; }
-.ba-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: linear-gradient(to top, rgba(10,10,15,0.9), transparent); display: flex; justify-content: center; gap: 24px; }
+.ba-label { position: relative; padding: 10px 12px; background: rgba(10,10,15,0.7); display: flex; align-items: center; justify-content: center; gap: 18px; border-top: 1px solid rgba(200,169,81,0.08); }
 .ba-label span { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-light); font-weight: 500; }
 .ba-label span.gold { color: var(--gold); }
+.ba-letter { margin-left: auto; font-family: var(--serif) !important; font-size: 16px !important; letter-spacing: 0 !important; color: var(--gold) !important; font-weight: 400 !important; text-transform: none !important; }
+.ba-info { padding: 20px 22px 24px; background: var(--black-card); border-top: 1px solid rgba(200,169,81,0.08); flex: 1; }
+.ba-zone { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.ba-meta { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; font-size: 13px; line-height: 1.6; }
+.ba-meta-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); font-weight: 500; }
+.ba-meta-value { color: var(--gray-light); font-weight: 300; }
+
+/* CTA section additions */
+.cta-buttons { display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+.ig-link { display: inline-block; margin-top: 32px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,169,81,0.3); padding-bottom: 4px; transition: all 0.3s; }
+.ig-link:hover { border-bottom-color: var(--gold); color: var(--gold-light); }
 
 /* Use cases */
 .use-cases { padding: 140px 60px; background: var(--black-light); border-top: 1px solid rgba(200,169,81,0.06); }

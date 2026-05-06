@@ -73,6 +73,11 @@ nav.scrolled { padding: 16px 60px; background: rgba(10,10,15,0.95); }
 }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+.nav-shop {
+  background: var(--gold) !important; color: var(--black) !important;
+  font-weight: 600 !important;
+}
+.nav-shop:hover { background: var(--gold-light) !important; color: var(--black) !important; transform: translateY(-1px); }
 
 .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 101; }
 .menu-toggle span { width: 24px; height: 1.5px; background: var(--white); }

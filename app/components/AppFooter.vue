@@ -11,6 +11,7 @@
           <NuxtLink to="/approche">Notre Approche</NuxtLink>
           <NuxtLink to="/equipe">L'Équipe</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>
+          <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener">Boutique en ligne ↗</a>
         </div>
       </div>
       <div>

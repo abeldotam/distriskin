@@ -57,7 +57,16 @@ useSeoMeta({
 
 <section class="other-brands"><p v-reveal class="section-label">Nos Autres Marques</p><div v-reveal.d1 class="ob-row"><NuxtLink to="/marques/teslamed" class="ob-link">TESLAMED — Technologie Esthétique</NuxtLink><NuxtLink to="/marques/niance" class="ob-link">NIANCE — Cosmétique Holistique</NuxtLink></div></section>
 
-<section class="cta-section"><p v-reveal class="section-label">Intéressé par JO ADAMS ?</p><h2 v-reveal.d1 class="section-title cta-title-spaced">Proposez l'<em>exception olfactive</em></h2><p v-reveal.d2 class="section-desc">Contactez-nous pour découvrir la collection et les conditions de partenariat.</p><NuxtLink to="/contact" v-reveal.d3 class="btn-primary">Nous contacter</NuxtLink></section>
+<section class="cta-section">
+  <p v-reveal class="section-label">Intéressé par JO ADAMS ?</p>
+  <h2 v-reveal.d1 class="section-title cta-title-spaced">Proposez l'<em>exception olfactive</em></h2>
+  <p v-reveal.d2 class="section-desc">Contactez-nous pour découvrir la collection et les conditions de partenariat.</p>
+  <div v-reveal.d3 class="cta-buttons">
+    <NuxtLink to="/contact" class="btn-primary">Nous contacter</NuxtLink>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-secondary">Accéder à la boutique en ligne ↗</a>
+  </div>
+  <a v-reveal.d3 href="https://www.instagram.com/jo_adams_france/" target="_blank" rel="noopener" class="ig-link">Suivez-nous sur Instagram&nbsp;: @jo_adams_france ↗</a>
+</section>
 </template>
 
 <style scoped>
@@ -66,4 +75,7 @@ useSeoMeta({
 /* Page-specific: brand visual */
 .brand-visual { aspect-ratio: 4/5; background: none; border: none; }
 .brand-visual img { width: 50%; max-width: 220px; height: auto; filter: drop-shadow(0 0 40px rgba(200,169,81,0.15)); }
+.cta-buttons { display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+.ig-link { display: inline-block; margin-top: 32px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,169,81,0.3); padding-bottom: 4px; transition: all 0.3s; }
+.ig-link:hover { border-bottom-color: var(--gold); color: var(--gold-light); }
 </style>
