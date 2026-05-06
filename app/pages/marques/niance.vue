@@ -70,9 +70,27 @@ useSeoMeta({
   </div>
 </section>
 
+<section class="shop-strip" v-reveal>
+  <div class="shop-strip-inner">
+    <div class="shop-strip-text">
+      <p class="shop-strip-label">Boutique en ligne</p>
+      <h3 class="shop-strip-title">Retrouvez NIANCE et nos <em>autres marques</em> sur la boutique</h3>
+    </div>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-primary">Accéder à la boutique ↗</a>
+  </div>
+</section>
+
 <section class="other-brands"><p v-reveal class="section-label">Nos Autres Marques</p><div v-reveal.d1 class="ob-row"><NuxtLink to="/marques/teslamed" class="ob-link">TESLAMED — Technologie Esthétique</NuxtLink><NuxtLink to="/marques/joadams" class="ob-link">JO ADAMS — Parfumerie de Niche</NuxtLink></div></section>
 
-<section class="cta-section"><p v-reveal class="section-label">Intéressé par NIANCE ?</p><h2 v-reveal.d1 class="section-title cta-title-spaced">Découvrez l'univers <em>NIANCE</em></h2><p v-reveal.d2 class="section-desc">Échangeons sur la manière dont NIANCE peut enrichir votre offre.</p><NuxtLink to="/contact" v-reveal.d3 class="btn-primary">Nous contacter</NuxtLink></section>
+<section class="cta-section">
+  <p v-reveal class="section-label">Intéressé par NIANCE ?</p>
+  <h2 v-reveal.d1 class="section-title cta-title-spaced">Découvrez l'univers <em>NIANCE</em></h2>
+  <p v-reveal.d2 class="section-desc">Échangeons sur la manière dont NIANCE peut enrichir votre offre.</p>
+  <div v-reveal.d3 class="cta-buttons">
+    <NuxtLink to="/contact" class="btn-primary">Nous contacter</NuxtLink>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-secondary">Accéder à la boutique en ligne ↗</a>
+  </div>
+</section>
 </template>
 
 <style scoped>
@@ -81,4 +99,5 @@ useSeoMeta({
 /* Page-specific: brand visual */
 .brand-visual { aspect-ratio: 1/1; background: radial-gradient(circle at 30% 40%, rgba(200,169,81,0.08) 0%, transparent 60%), var(--black-card); border: 1px solid rgba(200,169,81,0.1); }
 .brand-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.cta-buttons { display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
 </style>

@@ -112,7 +112,10 @@ useSeoMeta({
   <p class="section-label" v-reveal>Rejoignez-nous</p>
   <h2 class="section-title cta-title-spaced" v-reveal.d1>Envie de <em>travailler ensemble</em> ?</h2>
   <p class="section-desc" v-reveal.d2>Que vous soyez un professionnel du soin ou un commercial souhaitant rejoindre le réseau, contactez-nous.</p>
-  <NuxtLink to="/contact" class="btn-primary" v-reveal.d3>Nous contacter</NuxtLink>
+  <div class="cta-buttons" v-reveal.d3>
+    <NuxtLink to="/contact" class="btn-primary">Nous contacter</NuxtLink>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-secondary">Accéder à la boutique en ligne ↗</a>
+  </div>
 </section>
 </template>
 

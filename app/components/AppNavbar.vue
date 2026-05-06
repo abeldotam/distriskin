@@ -44,7 +44,8 @@ function isActive(path: string): boolean {
         </div>
       </div>
       <NuxtLink to="/equipe" :class="{ active: isActive('/equipe') }" @click="closeMobileMenu">L'&Eacute;quipe</NuxtLink>
-      <NuxtLink to="/contact" class="nav-cta" @click="closeMobileMenu">Contact</NuxtLink>
+      <NuxtLink to="/contact" :class="{ active: isActive('/contact') }" @click="closeMobileMenu">Contact</NuxtLink>
+      <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="nav-cta nav-shop" @click="closeMobileMenu">Boutique en ligne ↗</a>
     </div>
     <div class="menu-toggle" @click="toggleMobileMenu">
       <span></span><span></span><span></span>

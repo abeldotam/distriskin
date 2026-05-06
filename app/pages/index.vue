@@ -13,10 +13,6 @@ useSeoMeta({
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grain"></div>
-  <div class="hero-line"></div>
-  <div class="hero-line"></div>
-  <div class="hero-line"></div>
-  <div class="hero-line"></div>
   <div class="hero-content">
     <div class="hero-badge">Distribution Sélective Premium</div>
     <h1 class="hero-title">L'excellence au service<br>de la <em>beauté</em></h1>
@@ -104,6 +100,17 @@ useSeoMeta({
   </div>
 </section>
 
+<!-- SHOP STRIP -->
+<section class="shop-strip" v-reveal>
+  <div class="shop-strip-inner">
+    <div class="shop-strip-text">
+      <p class="shop-strip-label">Boutique en ligne</p>
+      <h3 class="shop-strip-title">Découvrez l'ensemble de nos <em>marques distribuées</em> en ligne</h3>
+    </div>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-primary">Accéder à la boutique ↗</a>
+  </div>
+</section>
+
 <!-- APPROACH -->
 <section class="approach-section">
   <div class="section-header">
@@ -154,7 +161,10 @@ useSeoMeta({
   <p class="section-label reveal" v-reveal>Travaillons Ensemble</p>
   <h2 class="section-title reveal reveal-d1 cta-title-spaced" v-reveal>Prêt à proposer<br>des produits <em>d'exception</em> ?</h2>
   <p class="section-desc reveal reveal-d2" v-reveal>Échangeons sur vos besoins et construisons ensemble une offre qui fera la différence auprès de votre clientèle.</p>
-  <NuxtLink to="/contact" class="btn-primary reveal reveal-d3" v-reveal>Nous contacter</NuxtLink>
+  <div class="cta-buttons reveal reveal-d3" v-reveal>
+    <NuxtLink to="/contact" class="btn-primary">Nous contacter</NuxtLink>
+    <a href="https://www.distriskin-shop.com" target="_blank" rel="noopener" class="btn-secondary">Accéder à la boutique en ligne ↗</a>
+  </div>
 </section>
 </template>
 
@@ -162,4 +172,5 @@ useSeoMeta({
 .section-desc-spaced { margin-top: 16px; }
 .approach-cta-wrap { margin-top: 60px; }
 .cta-title-spaced { margin-bottom: 24px; }
+.cta-buttons { display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
 </style>
